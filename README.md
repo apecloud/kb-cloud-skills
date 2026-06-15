@@ -48,9 +48,37 @@ Once the skill is loaded, interact with the agent in natural language:
 | "Delete cluster staging-kafka" | `DELETE /api/v1/organizations/{org}/clusters/staging-kafka` |
 | "List all engines" | `GET /admin/v1/engines` |
 
-### With Claude Code
+## Install
 
-Register as a project-level skill in `.claude/settings.json`:
+### CLI install
+
+```bash
+npx skills add apecloud/kb-cloud-skills
+```
+
+Or with GitHub CLI:
+
+```bash
+gh skill install apecloud/kb-cloud-skills kb-cloud-skills --agent claude-code
+```
+
+### Manual install
+
+Clone and register in your project's `.claude/settings.json`:
+
+```bash
+git clone https://github.com/apecloud/kb-cloud-skills /path/to/kb-cloud-skills
+```
+
+```json
+{
+  "skills": {
+    "kb-cloud-skills": "/path/to/kb-cloud-skills"
+  }
+}
+```
+
+Or reference the GitHub URL directly:
 
 ```json
 {
@@ -58,13 +86,6 @@ Register as a project-level skill in `.claude/settings.json`:
     "kb-cloud-skills": "https://github.com/apecloud/kb-cloud-skills"
   }
 }
-```
-
-Or clone and use locally:
-
-```bash
-git clone https://github.com/apecloud/kb-cloud-skills /path/to/kb-cloud-skills
-claude --project /path/to/kb-cloud-skills
 ```
 
 ### With Cursor
