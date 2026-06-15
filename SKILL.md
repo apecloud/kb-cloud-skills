@@ -190,7 +190,7 @@ curl -s --digest \
 Non-GET operations (POST, PATCH, PUT, DELETE) modify or destroy resources. Before executing any of these, you **must**:
 
 1. Show the user exactly what will happen (e.g. "This will **delete** cluster `prod-db` in org `my-org`. This action is irreversible.")
-2. Show the full curl command that will be executed. **Keep the environment variables unexpanded** (`$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY`) — never reveal the actual key and secret values.
+2. Show the full curl command that will be executed. Expand `$KB_CLOUD_BASE_URL` to show the real URL so the user can verify the target. **Keep `$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY` unexpanded** — never reveal the actual key and secret values.
 3. Wait for explicit user confirmation before proceeding
 
 Do NOT execute non-GET requests without confirmed user consent. GET requests may be executed directly.
