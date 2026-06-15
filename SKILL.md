@@ -1,6 +1,8 @@
 ---
 name: kb-cloud-skills
 description: Execute real operations against the KubeBlocks Cloud API. Use this skill when users need to query, create, modify, or delete KubeBlocks Cloud resources.
+metadata:
+  author: apecloud
 ---
 
 # KubeBlocks Cloud Operations Skill
