@@ -49,13 +49,13 @@ Before any operation, verify these environment variables are set:
 
 | Variable | Description |
 |----------|-------------|
-| `KB_CLOUD_BASE_URL` | API base URL, e.g. `https://cloudapi.apecloud.cn` |
+| `KB_CLOUD_BASE_URL` | API base URL |
 | `KB_CLOUD_ACCESS_KEY` | API accessKey (get it from **Personal Settings → API Keys**) |
 | `KB_CLOUD_SECRET_KEY` | API secretKey (get it from **Personal Settings → API Keys**) |
 
 If any are missing, prompt the user to set them:
 ```bash
-export KB_CLOUD_BASE_URL="https://cloudapi.apecloud.cn"
+export KB_CLOUD_BASE_URL="YOUR_BASE_URL"
 export KB_CLOUD_ACCESS_KEY="YOUR_ACCESS_KEY"
 export KB_CLOUD_SECRET_KEY="YOUR_SECRET_KEY"
 ```
@@ -64,22 +64,24 @@ export KB_CLOUD_SECRET_KEY="YOUR_SECRET_KEY"
 
 Follow these steps for every user request:
 
-### Step 0: Probe key ownership (once per session)
-
-**Probe adminapi first. Only if adminapi fails, probe openapi. If both work, use adminapi.**
+### Step 0: Determine API key type (once per session)
 
 **This step is critical** — getting it wrong means all subsequent operations will fail.
 
-Use `-o /dev/null -w "%{http_code}"` to output **only** the final HTTP status code. This avoids any confusion from DigestAuth's challenge-response (the initial 401 is hidden by curl's automatic retry).
+Determine whether the key is an **admin key** or a **user key** by probing in order:
+
+**1. Probe `/admin/v1/user` first:**
 
 ```bash
-# Probe adminapi first
 curl -s -o /dev/null -w "%{http_code}" --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   "$KB_CLOUD_BASE_URL/admin/v1/user"
 ```
 
-If adminapi returns non-2xx, **only then** probe openapi:
+- **200** → Admin key. Use **adminapi** (`/admin/v1/`). Done — skip step 2.
+- **Not 200** → Proceed to step 2.
+
+**2. Probe `/api/v1/user` (only if step 1 was not 200):**
 
 ```bash
 curl -s -o /dev/null -w "%{http_code}" --digest \
@@ -87,23 +89,23 @@ curl -s -o /dev/null -w "%{http_code}" --digest \
   "$KB_CLOUD_BASE_URL/api/v1/user"
 ```
 
-Each command outputs a single number (e.g. `200`, `401`, `404`). No parsing needed.
-
-**Cache the result**: once the probe succeeds, remember which API the key belongs to for the rest of the session. Only re-probe if the user explicitly changes `KB_CLOUD_ACCESS_KEY` or `KB_CLOUD_BASE_URL`.
+Each command outputs a single number (e.g. `200`, `401`). No parsing needed. The `-o /dev/null -w "%{http_code}"` flags ensure only the final HTTP status is printed — DigestAuth's challenge-response 401 is hidden by curl's automatic retry.
 
 **Decision table:**
 
-| Result | Meaning | Action |
-|--------|---------|--------|
-| adminapi → 2xx | Key is for adminapi | Remember this, use adminapi (`/admin/v1/`) |
-| adminapi → 401/403/404, openapi → 2xx | Key is for openapi | Remember this, use openapi (`/api/v1/`) |
-| Both → 401/403 | Key is invalid | Tell user to check `KB_CLOUD_ACCESS_KEY` and `KB_CLOUD_SECRET_KEY` |
-| Both → 404 or connection error | Wrong URL | Tell user to check `KB_CLOUD_BASE_URL` |
+| Step 1 (`/admin/v1/user`) | Step 2 (`/api/v1/user`) | Meaning | Action |
+|---------------------------|------------------------|---------|--------|
+| 200 | (skipped) | Admin key | Use **adminapi** (`/admin/v1/`) |
+| Not 200 | 200 | User key | Use **openapi** (`/api/v1/`) |
+| 401 | 401 | Invalid key | Tell user to check `KB_CLOUD_ACCESS_KEY` / `KB_CLOUD_SECRET_KEY` |
+| 404 or connection error | 404 or connection error | Wrong URL | Tell user to check `KB_CLOUD_BASE_URL` |
 
-From Step 0, derive these variables for the rest of the session:
+**Cache the result**: once determined, remember the key type for the rest of the session. Only re-probe if the user explicitly changes `KB_CLOUD_ACCESS_KEY` or `KB_CLOUD_BASE_URL`.
 
-- `{prefix}` = `admin/v1` if adminapi, or `api/v1` if openapi
-- `{api_doc}` = `adminapi` if adminapi, or `openapi` if openapi
+From this step, derive these variables for the rest of the session:
+
+- `{prefix}` = `admin/v1` if admin key, or `api/v1` if user key
+- `{api_doc}` = `adminapi` if admin key, or `openapi` if user key
 
 ### Step 1: Understand intent and identify operation
 
@@ -240,8 +242,8 @@ curl -s --digest \
 | 200 | Success | Display normally |
 | 201 | Created | Show the new resource |
 | 400 | Bad request | Show error details, verify parameters |
-| 401 | Unauthorized | Key is invalid, prompt user to check |
-| 403 | Forbidden | Key lacks permission for this operation |
+| 401 | Unauthorized | API key authentication failed, prompt user to check |
+| 403 | Forbidden | Authenticated but lacks business permission for this operation |
 | 404 | Not found | Verify resource name / org name |
 | 409 | Conflict | Resource name already exists |
 | 5xx | Server error | Retry later |
