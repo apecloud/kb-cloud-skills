@@ -1,6 +1,6 @@
 # kb-cloud-skills
 
-An AI agent skill for executing real operations against the [KubeBlocks Cloud](https://kblocks.com) API. Gives any AI agent the ability to query, create, modify, and delete KubeBlocks Cloud resources using natural language.
+An AI agent skill for executing real operations against the KubeBlocks Cloud API. Gives any AI agent the ability to query, create, modify, and delete KubeBlocks Cloud resources using natural language.
 
 ## What it does
 
@@ -14,7 +14,7 @@ This project bundles the full KubeBlocks Cloud API reference (user-facing `/api/
 ## Prerequisites
 
 - An AI agent that supports the [SKILL.md](https://claude.com/claude-code) format
-- A KubeBlocks Cloud API key (accessKey + secretKey)
+- A KubeBlocks Cloud API key. Obtain it from **Personal Settings → API Keys** in the KubeBlocks Cloud console. You will get an `accessKey` and a `secretKey`.
 - Node.js ≥ 18 (only needed to regenerate reference docs from OpenAPI specs)
 
 ## Setup

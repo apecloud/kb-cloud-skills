@@ -52,8 +52,8 @@ Before any operation, verify these environment variables are set:
 | Variable | Description |
 |----------|-------------|
 | `KB_CLOUD_BASE_URL` | API base URL, e.g. `https://cloudapi.apecloud.cn` |
-| `KB_CLOUD_ACCESS_KEY` | API accessKey |
-| `KB_CLOUD_SECRET_KEY` | API secretKey |
+| `KB_CLOUD_ACCESS_KEY` | API accessKey (get it from **Personal Settings → API Keys**) |
+| `KB_CLOUD_SECRET_KEY` | API secretKey (get it from **Personal Settings → API Keys**) |
 
 If any are missing, prompt the user to set them:
 ```bash
