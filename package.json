@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "bundle:openapi": "redocly bundle ../apecloud/apiserver/api/openapi.yaml > ./src/openapi.yaml",
+    "bundle:adminapi": "redocly bundle ../apecloud/apiserver/api/adminapi.yaml > ./src/adminapi.yaml",
+    "bundle:build": "yarn bundle:openapi && yarn bundle:adminapi",
+    "skills:adminapi": "openapi-to-skills ./src/adminapi.yaml -o ./references -n adminapi -f && rm -f ./references/adminapi/SKILL.md && mv ./references/adminapi/references/* ./references/adminapi/ && rm -rf ./references/adminapi/references && rm -f ./references/adminapi/authentication.md",
+    "skills:openapi": "openapi-to-skills ./src/openapi.yaml -o ./references -n openapi -f && rm -f ./references/openapi/SKILL.md && mv ./references/openapi/references/* ./references/openapi/ && rm -rf ./references/openapi/references && rm -f ./references/openapi/authentication.md",
+    "skills:build": "yarn skills:adminapi && yarn skills:openapi"
+  },
+  "devDependencies": {
+    "@redocly/cli": "^2.32.2",
+    "openapi-to-skills": "^0.3.1"
+  }
+}
