@@ -13,7 +13,7 @@ This project bundles the full KubeBlocks Cloud API reference (user-facing `/api/
 
 ## Prerequisites
 
-- An AI agent that supports the [SKILL.md](https://claude.com/claude-code) format
+- An AI agent that supports the SKILL.md format
 - A KubeBlocks Cloud API key. Obtain it from **Personal Settings → API Keys** in the KubeBlocks Cloud console. You will get an `accessKey` and a `secretKey`.
 - Node.js ≥ 18 (only needed to regenerate reference docs from OpenAPI specs)
 
@@ -22,14 +22,14 @@ This project bundles the full KubeBlocks Cloud API reference (user-facing `/api/
 Set the following environment variables:
 
 ```bash
-export KB_CLOUD_BASE_URL="https://cloudapi.apecloud.cn"
+export KB_CLOUD_BASE_URL="YOUR_BASE_URL"
 export KB_CLOUD_ACCESS_KEY="YOUR_ACCESS_KEY"
 export KB_CLOUD_SECRET_KEY="YOUR_SECRET_KEY"
 ```
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `KB_CLOUD_BASE_URL` | API base URL | `https://cloudapi.apecloud.cn` |
+| `KB_CLOUD_BASE_URL` | API base URL | `YOUR_BASE_URL` |
 | `KB_CLOUD_ACCESS_KEY` | API accessKey | `xxx` |
 | `KB_CLOUD_SECRET_KEY` | API secretKey | `xxx` |
 
@@ -59,7 +59,7 @@ npx skills add apecloud/kb-cloud-skills
 Or with GitHub CLI:
 
 ```bash
-gh skill install apecloud/kb-cloud-skills kb-cloud-skills --agent claude-code
+gh skill install apecloud/kb-cloud-skills kb-cloud-skills
 ```
 
 ### Manual install
