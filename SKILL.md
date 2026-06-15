@@ -68,30 +68,30 @@ Follow these steps for every user request:
 
 ### Step 0: Probe key ownership (once per session)
 
-One key belongs to only one API. Probe with `GET /user`, trying openapi first, then adminapi.
+One key belongs to only one API. Probe with `GET /user`, trying adminapi first, then openapi.
 
 **Cache the result**: once the probe succeeds, remember which API the key belongs to (openapi or adminapi) for the rest of the session. Do NOT re-probe on every request. Only re-probe if the user explicitly changes `KB_CLOUD_ACCESS_KEY` or `KB_CLOUD_BASE_URL`.
 
 **Important**: use `-i` to get the full HTTP response (headers + body). Judge by the HTTP status code; the response body content is irrelevant for this step.
 
 ```bash
+# Try adminapi first
+curl -s -i --digest \
+  -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
+  "$KB_CLOUD_BASE_URL/admin/v1/user"
+
 # Try openapi
 curl -s -i --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   "$KB_CLOUD_BASE_URL/api/v1/user"
-
-# Try adminapi
-curl -s -i --digest \
-  -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
-  "$KB_CLOUD_BASE_URL/admin/v1/user"
 ```
 
 **Decision table:**
 
 | Result | Meaning | Action |
 |--------|---------|--------|
-| openapi returns 2xx | Key is for openapi | Remember this, use openapi (`/api/v1/`) |
 | adminapi returns 2xx | Key is for adminapi | Remember this, use adminapi (`/admin/v1/`) |
+| adminapi fails, openapi returns 2xx | Key is for openapi | Remember this, use openapi (`/api/v1/`) |
 | Both return 401/403 | Key is invalid | Tell user to check `KB_CLOUD_ACCESS_KEY` and `KB_CLOUD_SECRET_KEY` |
 | Both return 404 or other | Wrong URL | Tell user to check `KB_CLOUD_BASE_URL` |
 
