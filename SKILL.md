@@ -70,30 +70,34 @@ Follow these steps for every user request:
 
 One key belongs to only one API. Probe with `GET /user`, trying adminapi first, then openapi.
 
-**Cache the result**: once the probe succeeds, remember which API the key belongs to (openapi or adminapi) for the rest of the session. Do NOT re-probe on every request. Only re-probe if the user explicitly changes `KB_CLOUD_ACCESS_KEY` or `KB_CLOUD_BASE_URL`.
+**This step is critical** — getting it wrong means all subsequent operations will fail.
 
-**Important**: use `-i` to get the full HTTP response (headers + body). Judge by the HTTP status code; the response body content is irrelevant for this step.
+Use `-o /dev/null -w "%{http_code}"` to output **only** the final HTTP status code. This avoids any confusion from DigestAuth's challenge-response (the initial 401 is hidden by curl's automatic retry).
 
 ```bash
 # Try adminapi first
-curl -s -i --digest \
+curl -s -o /dev/null -w "%{http_code}" --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   "$KB_CLOUD_BASE_URL/admin/v1/user"
 
 # Try openapi
-curl -s -i --digest \
+curl -s -o /dev/null -w "%{http_code}" --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   "$KB_CLOUD_BASE_URL/api/v1/user"
 ```
+
+Each command outputs a single number (e.g. `200`, `401`, `404`). No parsing needed.
+
+**Cache the result**: once the probe succeeds, remember which API the key belongs to for the rest of the session. Only re-probe if the user explicitly changes `KB_CLOUD_ACCESS_KEY` or `KB_CLOUD_BASE_URL`.
 
 **Decision table:**
 
 | Result | Meaning | Action |
 |--------|---------|--------|
-| adminapi returns 2xx | Key is for adminapi | Remember this, use adminapi (`/admin/v1/`) |
-| adminapi fails, openapi returns 2xx | Key is for openapi | Remember this, use openapi (`/api/v1/`) |
-| Both return 401/403 | Key is invalid | Tell user to check `KB_CLOUD_ACCESS_KEY` and `KB_CLOUD_SECRET_KEY` |
-| Both return 404 or other | Wrong URL | Tell user to check `KB_CLOUD_BASE_URL` |
+| adminapi → 2xx | Key is for adminapi | Remember this, use adminapi (`/admin/v1/`) |
+| adminapi → 401/403/404, openapi → 2xx | Key is for openapi | Remember this, use openapi (`/api/v1/`) |
+| Both → 401/403 | Key is invalid | Tell user to check `KB_CLOUD_ACCESS_KEY` and `KB_CLOUD_SECRET_KEY` |
+| Both → 404 or connection error | Wrong URL | Tell user to check `KB_CLOUD_BASE_URL` |
 
 ### Step 1: Understand intent and identify operation
 
