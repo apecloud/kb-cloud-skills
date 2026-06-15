@@ -185,6 +185,16 @@ curl -s --digest \
   "$KB_CLOUD_BASE_URL/api/v1/organizations/{orgName}/clusters/{clusterName}"
 ```
 
+**⚠️ Destructive operations require user confirmation:**
+
+Non-GET operations (POST, PATCH, PUT, DELETE) modify or destroy resources. Before executing any of these, you **must**:
+
+1. Show the user exactly what will happen (e.g. "This will **delete** cluster `prod-db` in org `my-org`. This action is irreversible.")
+2. Show the full curl command that will be executed. **Keep the environment variables unexpanded** (`$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY`) — never reveal the actual key and secret values.
+3. Wait for explicit user confirmation before proceeding
+
+Do NOT execute non-GET requests without confirmed user consent. GET requests may be executed directly.
+
 **Key points:**
 - Every request must include `--digest -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY"`
 - POST/PATCH need `-H "Content-Type: application/json"` and `-d` with a JSON body
@@ -230,12 +240,22 @@ curl -s --digest \
 
 Operation files contain paths with `{param}` placeholders:
 
-- `{orgName}`: organization name — ask on first use, remember for subsequent calls
-- `{clusterName}`: cluster name — from user input or existing context
+- `{orgName}`: organization name
+- `{clusterName}`: cluster name
 - `{instanceName}`: instance name
 - `{clusterID}`: cluster ID (UUID format)
 
-Always **ask the user** for missing required parameters. Never guess.
+**Never guess or fabricate parameter values.** When a required parameter is unknown, follow this priority:
+
+1. **Look it up first** — use the API to find valid values. For example:
+   - Need `{orgName}`? → list organizations
+   - Need `{clusterName}`? → list clusters
+   - Need `{environmentName}`? → list environments
+2. **If exactly one result** → use it and tell the user (e.g. "Using org `my-org`")
+3. **If multiple results** → present them to the user and ask which one to use
+4. **If lookup fails or returns empty** → ask the user to provide the value
+
+The same applies to query parameters and JSON body fields for POST/PATCH requests. Always resolve values from real data or user input — never send a request with made-up values.
 
 ### Pagination
 

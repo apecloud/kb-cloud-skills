@@ -30,8 +30,8 @@ export KB_CLOUD_SECRET_KEY="YOUR_SECRET_KEY"
 | Variable | Description | Example |
 |----------|-------------|---------|
 | `KB_CLOUD_BASE_URL` | API base URL | `https://cloudapi.apecloud.cn` |
-| `KB_CLOUD_ACCESS_KEY` | API accessKey | `AKIDxxxx` |
-| `KB_CLOUD_SECRET_KEY` | API secretKey | `xxxxxxxxxxxxxxxx` |
+| `KB_CLOUD_ACCESS_KEY` | API accessKey | `xxx` |
+| `KB_CLOUD_SECRET_KEY` | API secretKey | `xxx` |
 
 > One key works for only one API (`/api/v1/` or `/admin/v1/`). The skill auto-detects which one on first use.
 
@@ -67,9 +67,56 @@ git clone https://github.com/apecloud/kb-cloud-skills /path/to/kb-cloud-skills
 claude --project /path/to/kb-cloud-skills
 ```
 
-### With other agents
+### With Cursor
 
-Any agent that reads `SKILL.md` as a knowledge base can use this project. Point the agent to this repository or a local clone — it will follow the instructions in `SKILL.md` to navigate the reference docs and make API calls.
+Add the skill as project context. In `.cursor/rules/kb-cloud.md`:
+
+```markdown
+When the user asks about KubeBlocks Cloud resources, read
+/path/to/kb-cloud-skills/SKILL.md first, then follow its
+instructions to navigate the reference docs and make API calls.
+```
+
+Or add the `SKILL.md` to your `.cursorrules` file as a referenced document.
+
+### With GitHub Copilot
+
+Add a custom instruction in `.github/copilot-instructions.md`:
+
+```markdown
+# KubeBlocks Cloud API
+
+When working with KubeBlocks Cloud resources, load the skill at
+/path/to/kb-cloud-skills/SKILL.md. Follow the agent workflow
+defined there: probe key ownership, navigate reference docs,
+build authenticated curl commands, and present results.
+
+Environment variables required:
+- KB_CLOUD_BASE_URL
+- KB_CLOUD_ACCESS_KEY
+- KB_CLOUD_SECRET_KEY
+```
+
+### With Windsurf
+
+Add to `.windsurfrules`:
+
+```markdown
+KubeBlocks Cloud operations: load /path/to/kb-cloud-skills/SKILL.md
+as the entry point. It teaches how to authenticate with DigestAuth,
+navigate the reference docs under references/openapi/ and
+references/adminapi/, and execute API calls via curl.
+```
+
+### With any other agent
+
+Clone the repo and point your agent at it as workspace context:
+
+```bash
+git clone https://github.com/apecloud/kb-cloud-skills
+```
+
+The `SKILL.md` is self-contained — any agent that can read Markdown and execute shell commands can follow it. The reference docs under `references/` are loaded on demand, so they don't consume context tokens until needed.
 
 ## Supported resources
 
