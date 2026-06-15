@@ -43,8 +43,6 @@ KubeBlocks Cloud is a cloud-native database management platform supporting multi
 | openapi | `/api/v1/` | User-facing, manage database resources | cluster, backup, account, restore, kafka, redis... |
 | adminapi | `/admin/v1/` | Admin-facing, manage platform config | environment, engine, organization, SLA, pricing... |
 
-**One key works for only one API.**
-
 ## Environment variables
 
 Before any operation, verify these environment variables are set:
@@ -68,19 +66,22 @@ Follow these steps for every user request:
 
 ### Step 0: Probe key ownership (once per session)
 
-One key belongs to only one API. Probe with `GET /user`, trying adminapi first, then openapi.
+**Probe adminapi first. Only if adminapi fails, probe openapi. If both work, use adminapi.**
 
 **This step is critical** — getting it wrong means all subsequent operations will fail.
 
 Use `-o /dev/null -w "%{http_code}"` to output **only** the final HTTP status code. This avoids any confusion from DigestAuth's challenge-response (the initial 401 is hidden by curl's automatic retry).
 
 ```bash
-# Try adminapi first
+# Probe adminapi first
 curl -s -o /dev/null -w "%{http_code}" --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   "$KB_CLOUD_BASE_URL/admin/v1/user"
+```
 
-# Try openapi
+If adminapi returns non-2xx, **only then** probe openapi:
+
+```bash
 curl -s -o /dev/null -w "%{http_code}" --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   "$KB_CLOUD_BASE_URL/api/v1/user"
@@ -99,6 +100,11 @@ Each command outputs a single number (e.g. `200`, `401`, `404`). No parsing need
 | Both → 401/403 | Key is invalid | Tell user to check `KB_CLOUD_ACCESS_KEY` and `KB_CLOUD_SECRET_KEY` |
 | Both → 404 or connection error | Wrong URL | Tell user to check `KB_CLOUD_BASE_URL` |
 
+From Step 0, derive these variables for the rest of the session:
+
+- `{prefix}` = `admin/v1` if adminapi, or `api/v1` if openapi
+- `{api_doc}` = `adminapi` if adminapi, or `openapi` if openapi
+
 ### Step 1: Understand intent and identify operation
 
 Analyze what the user wants and determine the resource + operation:
@@ -112,20 +118,22 @@ If the user's intent is unclear, ask for clarification.
 
 ### Step 2: Navigate reference docs
 
-Follow the **resource → operation → schema** chain under `references/openapi/` or `references/adminapi/` (whichever was determined in Step 0).
+Follow the **resource → operation → schema** chain under the references directory corresponding to the API determined in Step 0 (`references/adminapi/` or `references/openapi/`).
+
+Let `{api_doc}` = `adminapi` or `openapi`, from Step 0.
 
 **2a. Find the resource**
 
 List the resources directory to see available resources, then read the one matching the user's intent:
 
 ```bash
-ls references/openapi/resources/
+ls references/{api_doc}/resources/
 ```
 
 Pick the resource file that matches, then read it:
 
 ```
-Read references/openapi/resources/cluster.md
+Read references/{api_doc}/resources/cluster.md
 ```
 
 Resource files list all available operations for that resource (method + path + summary).
@@ -133,7 +141,7 @@ Resource files list all available operations for that resource (method + path + 
 **2b. Read the operation file**
 
 ```
-Read references/openapi/operations/listCluster.md
+Read references/{api_doc}/operations/listCluster.md
 ```
 
 Operation files contain:
@@ -147,7 +155,7 @@ Operation files contain:
 When an operation has a request body, you **must** read the referenced schema to understand the body structure:
 
 ```
-Read references/openapi/schemas/clusterCreate/clusterCreate.md
+Read references/{api_doc}/schemas/clusterCreate/clusterCreate.md
 ```
 
 Schema files list all fields, their types, and whether they are required. If a field's type links to another schema (e.g. `[clusterType](clusterType.md)`), follow the link and read that schema as needed.
@@ -163,7 +171,7 @@ All requests use DigestAuth. Construct curl commands as follows:
 curl -s --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   -H "Content-Type: application/json" \
-  "$KB_CLOUD_BASE_URL/api/v1/organizations/{orgName}/clusters?clusterDefinition=mysql"
+  "$KB_CLOUD_BASE_URL/{prefix}/organizations/{orgName}/clusters?clusterDefinition=mysql"
 ```
 
 **POST/PATCH request (with body):**
@@ -178,7 +186,7 @@ curl -s --digest \
     "environmentName": "dev",
     "version": "8.0.30"
   }' \
-  "$KB_CLOUD_BASE_URL/api/v1/organizations/{orgName}/clusters"
+  "$KB_CLOUD_BASE_URL/{prefix}/organizations/{orgName}/clusters"
 ```
 
 **DELETE request:**
@@ -186,7 +194,7 @@ curl -s --digest \
 curl -s --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
   -X DELETE \
-  "$KB_CLOUD_BASE_URL/api/v1/organizations/{orgName}/clusters/{clusterName}"
+  "$KB_CLOUD_BASE_URL/{prefix}/organizations/{orgName}/clusters/{clusterName}"
 ```
 
 **⚠️ Destructive operations require user confirmation:**
@@ -215,7 +223,7 @@ Do NOT execute non-GET requests without confirmed user consent. GET requests may
 ```bash
 curl -s --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
-  "$KB_CLOUD_BASE_URL/api/v1/organizations/{orgName}/clusters" \
+  "$KB_CLOUD_BASE_URL/{prefix}/organizations/{orgName}/clusters" \
   | python3 -m json.tool
 ```
 
@@ -285,15 +293,15 @@ When constructing a POST/PATCH body:
 User: "List my clusters"
 
 Execution flow:
-1. Probe openapi → 2xx, use openapi
-2. Read `references/openapi/resources/cluster.md` → find `GET /api/v1/organizations/{orgName}/clusters`
-3. Read `references/openapi/operations/listCluster.md` → understand parameters
+1. Step 0 → {prefix} = admin/v1, {api_doc} = adminapi
+2. Read `references/{api_doc}/resources/cluster.md` → find `GET /{prefix}/organizations/{orgName}/clusters`
+3. Read `references/{api_doc}/operations/listCluster.md` → understand parameters
 4. Ask user for orgName (if not known)
 5. Execute:
 ```bash
 curl -s --digest \
   -u "$KB_CLOUD_ACCESS_KEY:$KB_CLOUD_SECRET_KEY" \
-  "$KB_CLOUD_BASE_URL/api/v1/organizations/my-org/clusters" \
+  "$KB_CLOUD_BASE_URL/{prefix}/organizations/my-org/clusters" \
   | python3 -m json.tool
 ```
 6. Extract name, status, engine from `items[]`, present as a table
@@ -303,9 +311,9 @@ curl -s --digest \
 User: "Create a MySQL cluster for me"
 
 Execution flow:
-1. Steps 0 through 2b as above, find `POST /api/v1/organizations/{orgName}/clusters`
+1. Steps 0 through 2b as above, find `POST /{prefix}/organizations/{orgName}/clusters`
 2. Read operation file, note request body is required, schema reference is `clusterCreate`
-3. Read `references/openapi/schemas/clusterCreate/clusterCreate.md`
+3. Read `references/{api_doc}/schemas/clusterCreate/clusterCreate.md`
 4. Required fields: name, engine, environmentName
 5. Ask user to fill in values (if environmentName is unknown, suggest listing environments first)
 6. Build body, execute POST request
