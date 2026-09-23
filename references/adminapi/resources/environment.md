@@ -9,6 +9,7 @@ Environment APIs
 | POST | `/admin/v1/kubernetes/nodes` | List Kubernetes nodes | [View](../operations/listKubernetesNode.md) |
 | POST | `/admin/v1/kubernetes/storageclasses` | List Kubernetes storageclass | [View](../operations/listKubernetesStorageClass.md) |
 | POST | `/admin/v1/kubernetes/dns` | Get Kubernetes DNS | [View](../operations/getKubernetesDNS.md) |
+| GET | `/admin/v1/environments/{environmentName}/resources/{resourceName}` | Get a live Kubernetes resource | [View](../operations/getEnvironmentResource.md) |
 | GET | `/admin/v1/environments` | List environments | [View](../operations/listEnvironment.md) |
 | POST | `/admin/v1/environments` | Create environment | [View](../operations/createEnvironment.md) |
 | POST | `/admin/v1/environments/preflight` | Preflight check before create Environment | [View](../operations/preflightEnvironment.md) |
@@ -25,6 +26,7 @@ Environment APIs
 | GET | `/admin/v1/environments/{environmentName}/nodes` | List Kubernetes nodes in an environment | [View](../operations/listNodes.md) |
 | POST | `/admin/v1/environments/{environmentName}/nodes` | Add nodes to environment | [View](../operations/addNodes.md) |
 | DELETE | `/admin/v1/environments/{environmentName}/nodes` | Delete nodes from environment | [View](../operations/deleteNodes.md) |
+| GET | `/admin/v1/environments/{environmentName}/koordinatorReservations/summary` | Get Koordinator Reservation summary | [View](../operations/getKoordinatorReservationSummary.md) |
 | PATCH | `/admin/v1/environments/{environmentName}/nodes/{nodeName}/cordon` | Cordon environment node | [View](../operations/cordonEnvironmentNode.md) |
 | PATCH | `/admin/v1/environments/{environmentName}/nodes/{nodeName}/uncordon` | Cordon environment node | [View](../operations/uncordonEnvironmentNode.md) |
 | POST | `/admin/v1/environments/{environmentName}/nodes/{nodeName}/drain` | Drain environment node | [View](../operations/drainEnvironmentNode.md) |
@@ -44,11 +46,12 @@ Environment APIs
 | DELETE | `/admin/v1/environments/{environmentName}/nodeGroups/{nodeGroupName}` | Delete environment node group | [View](../operations/deleteNodeGroup.md) |
 | PATCH | `/admin/v1/environments/{environmentName}/nodeGroups/{nodeGroupName}` | Patch node group | [View](../operations/patchNodeGroup.md) |
 | GET | `/admin/v1/environments/{environmentName}/availableZones` | List the availability zones where the environment's nodes are located | [View](../operations/listEnvNodeZone.md) |
+| GET | `/admin/v1/environments/{environmentName}/network/ipPools` | Discover Pod IP pools and explicit selection policy in an environment | [View](../operations/listEnvironmentIPPools.md) |
 | POST | `/admin/v1/environmentObjectStorage` | List environment object storage | [View](../operations/listEnvironmentObjectStorage.md) |
 | POST | `/admin/v1/environmentBackupRepo` | get environment backup repo | [View](../operations/getEnvironmentBackupRepo.md) |
 | POST | `/admin/v1/checkKubeconfig` | check kubeconfig | [View](../operations/checkKubeconfig.md) |
 | GET | `/admin/v1/environments/{environmentName}/modules` | Get environment module information in an environment | [View](../operations/getEnvironmentModuleInfo.md) |
-| PATCH | `/admin/v1/environments/{environmentName}/modules` | update environment module | [View](../operations/updateEnvironmentModule.md) |
+| PATCH | `/admin/v1/environments/{environmentName}/modules` | Update an environment module | [View](../operations/updateEnvironmentModule.md) |
 | GET | `/admin/v1/environments/{environmentName}/modules/{moduleName}/details` | Get details information for an environment module | [View](../operations/getEnvironmentModuleDetails.md) |
 | GET | `/admin/v1/environments/{environmentName}/modules/{moduleName}/pods/{podName}/logs` | Get logs for an environment module pod. When no parameters other than containerName and search are provided, start streaming logs in real-time. | [View](../operations/getEnvironmentModuleLogs.md) |
 | GET | `/admin/v1/environments/optional-modules` | get option environment module info | [View](../operations/getOptionalEnvironmentModules.md) |

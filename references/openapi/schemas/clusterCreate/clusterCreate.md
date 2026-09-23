@@ -34,4 +34,6 @@ KubeBlocks cluster information
 | `objectStorageConfig` | [clusterObjectStorageConfig](clusterObjectStorageConfig.md) | No |  |
 | `maintainceWindow` | [clusterMaintainceWindow](clusterMaintainceWindow.md) | No |  |
 | `schedulingPolicy` | [schedulingPolicyType](schedulingPolicyType.md) | No |  |
+| `schedulerName` | string | No | Scheduler used by this cluster. If omitted, KBE uses the environment default. When koordinatorEnabled is true for the target environment, the environment default is the globally configured Koordinator scheduler. |
+| `reservationResourceClass` | [koordinatorReservationResourceClass](koordinatorReservationResourceClass.md) | No |  |
 

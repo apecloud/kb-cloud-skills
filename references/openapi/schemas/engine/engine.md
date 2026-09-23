@@ -20,4 +20,5 @@
 | `errMsg` | string | No | engine error messages when the engine status is failed |
 | `clusterVersions` | string[] | No | clusterversion in the engines |
 | `maturityLevel` | string | No | engine maturity level |
+| `extra` | object | No | engine-specific runtime metadata for clients |
 

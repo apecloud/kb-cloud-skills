@@ -41,7 +41,7 @@ applied to ensure they are spread across different nodes, especially when resour
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `compatibleKBVersions` | string[] | No |  |
+| `compatibleKBVersions` | string[] | No | if omitted, all KB versions are compatible |
 | `mappings` | object[] | No |  |
 
 #### `valuesMappings.mappings`

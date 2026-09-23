@@ -16,4 +16,8 @@ be at the same organization as the current cluster.
  |
 | `clusterDefinition` | string | No | the cluster definition of the referenced cluster. |
 | `serviceDescriptor` | [serviceDescriptor](serviceDescriptor.md) | No |  |
+| `extraForManualInput` | object | No | extra fields for manual input of the serviceRef. The keys must be defined in the
+engineoption modeServiceRef.extraForManualInput. They are mapped to helm values
+via the corresponding helmValuePath.extraForManualInput.
+ |
 

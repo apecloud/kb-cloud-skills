@@ -57,6 +57,7 @@ The value should match one of the mode names defined in the modes array.
 |-------|------|----------|-------------|
 | `required` | boolean | No | Indicate whether the current cluster requires users to input the license |
 | `secretName` | string | Yes | support to refer the cluster name with variable ${clusterName} |
-| `fileName` | string | Yes | the license file name |
+| `fileName` | string | No | the license file name |
+| `files` | engineOptionLicenseFile[] | No | Explicit license file upload slots. Each item maps one UI upload field to the file name written into the license Secret. |
 | `components` | licenseOption[] | No | set the custom ops to update license for different components |
 

@@ -1,13 +1,16 @@
 # inspectionScriptCategory
 
-Specifies the category of the inspection script.
+Current inspection category vocabulary. Existing legacy categories are normalized by the backend before they are returned.
 
 **Type:** enum
 
 ## Values
 
-- `performance`
 - `availability`
-- `security`
+- `performance`
+- `connections`
+- `resource`
+- `capacity`
+- `vacuumWraparound`
 - `backup`
-- `other`
+- `security`

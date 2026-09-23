@@ -9,3 +9,4 @@ Alert Object APIs
 | GET | `/api/v1/organizations/{orgName}/alerts/objects` | List alert objects | [View](../operations/listAlertObjects.md) |
 | PATCH | `/api/v1/organizations/{orgName}/alerts/objects` | Set alert objects status | [View](../operations/setAlertObjectsStatus.md) |
 | PATCH | `/api/v1/organizations/{orgName}/alerts/objects/{alertId}` | Set alert object status | [View](../operations/setAlertObjectStatus.md) |
+| GET | `/api/v1/organizations/{orgName}/alerts/cluster/{clusterName}/summary` | Get cluster alert summary | [View](../operations/getClusterAlertSummary.md) |

@@ -9,3 +9,4 @@ Operation Events
 | GET | `/api/v1/organizations/{orgName}/eventfilter/{filterType}` | Query available filters for event listing | [View](../operations/getEventFilter.md) |
 | GET | `/api/v1/organizations/{orgName}/events` | List events | [View](../operations/listOrgEvents.md) |
 | GET | `/api/v1/organizations/{orgName}/events/{eventID}` | Query event detail by Event ID | [View](../operations/getOrgEvent.md) |
+| GET | `/api/v1/organizations/{orgName}/tasks/{taskId}/events` | List operation events related to a task | [View](../operations/listTaskEvents.md) |

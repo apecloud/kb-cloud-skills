@@ -1,4 +1,4 @@
-# GET /admin/v1/organizations/{orgName}/ai-agent/conversations/{conversationId}/turn-actions/{actionId}/artifacts/{artifactId}/browse
+# GET /admin/v1/ai-agent/conversations/{conversationId}/turn-actions/{actionId}/artifacts/{artifactId}/browse
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Browse a generated AI diagnosis report artifact**
@@ -8,7 +8,6 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 | `actionId` | path | string | Yes |  |
 | `artifactId` | path | string | Yes |  |

@@ -8,3 +8,4 @@
 | GET | `/admin/v1/events` | List events | [View](../operations/listEvents.md) |
 | GET | `/admin/v1/events/{eventID}` | Query event detail by Event ID | [View](../operations/getEvent.md) |
 | GET | `/admin/v1/organizations/{orgName}/events` | List events | [View](../operations/listOrgEvents.md) |
+| GET | `/admin/v1/tasks/{taskId}/events` | List operation events related to a task | [View](../operations/listTaskEvents.md) |

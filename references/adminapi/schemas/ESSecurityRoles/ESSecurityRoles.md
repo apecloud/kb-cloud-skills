@@ -1,0 +1,4 @@
+# ESSecurityRoles
+
+**Type:** object
+

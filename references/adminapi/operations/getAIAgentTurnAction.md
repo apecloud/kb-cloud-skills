@@ -1,4 +1,4 @@
-# GET /admin/v1/organizations/{orgName}/ai-agent/conversations/{conversationId}/turn-actions/{actionId}
+# GET /admin/v1/ai-agent/conversations/{conversationId}/turn-actions/{actionId}
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Get one stable AI diagnosis turn process action**
@@ -8,7 +8,6 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 | `actionId` | path | string | Yes |  |
 

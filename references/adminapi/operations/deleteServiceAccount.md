@@ -1,0 +1,27 @@
+# DELETE /admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}
+
+**Resource:** [rdbms](../resources/rdbms.md)
+**Delete MinIO access key**
+**Operation ID:** `deleteServiceAccount`
+
+delete a MinIO service account access key
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `engineName` | path | string | Yes | name of the engine |
+| `orgName` | path | string | Yes | name of the organization |
+| `clusterName` | path | string | Yes | name of the cluster |
+| `accessKey` | path | string | Yes | MinIO access key |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 204 | Returned when access key is deleted successfully. |
+| 401 | (reference) |
+| 403 | (reference) |
+| 404 | (reference) |
+| 500 | (reference) |
+

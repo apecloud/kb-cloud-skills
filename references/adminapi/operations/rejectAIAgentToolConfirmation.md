@@ -1,4 +1,4 @@
-# POST /admin/v1/organizations/{orgName}/ai-agent/conversations/{conversationId}/tool-confirmations/{confirmationId}/reject
+# POST /admin/v1/ai-agent/conversations/{conversationId}/tool-confirmations/{confirmationId}/reject
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Reject one AI diagnosis tool confirmation**
@@ -8,7 +8,6 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 | `confirmationId` | path | string | Yes |  |
 

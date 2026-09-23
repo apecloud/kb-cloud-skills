@@ -15,6 +15,11 @@
 | POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts` | Create cluster account | [View](../operations/createAccount.md) |
 | DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete cluster account | [View](../operations/deleteAccount.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | update cluster account | [View](../operations/updateAccount.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys` | List MinIO access keys | [View](../operations/listServiceAccounts.md) |
+| POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys` | Create MinIO access key | [View](../operations/createServiceAccount.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Get MinIO access key | [View](../operations/getServiceAccount.md) |
+| DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Delete MinIO access key | [View](../operations/deleteServiceAccount.md) |
+| PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Update MinIO access key | [View](../operations/updateServiceAccount.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/privileges` | update account privileges | [View](../operations/updateAccountPrivileges.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/lock` | Lock cluster account | [View](../operations/lockAccount.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/unlock` | Unlock cluster account | [View](../operations/unlockAccount.md) |

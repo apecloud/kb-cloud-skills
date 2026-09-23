@@ -25,5 +25,5 @@ Query containers of a data channel module pod
 
 **Success Response Schema:**
 
-[dataReplicationChannelContainer](../schemas/dataReplicationChannelContainer/dataReplicationChannelContainer.md)
+Array of [dataReplicationChannelContainer](../schemas/dataReplicationChannelContainer/dataReplicationChannelContainer.md)
 

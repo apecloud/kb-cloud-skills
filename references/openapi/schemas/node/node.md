@@ -24,5 +24,6 @@ Populated by the system. Read-only. Null for lists |
 | `controlPlane` | boolean | No | node is in control plane |
 | `dataPlane` | boolean | No | node is in data plane |
 | `managed` | boolean | No | Whether the node is managed (has data-plane or control-plane label) |
+| `koordinatorReservations` | koordinatorNodeReservation[] | No |  |
 | `status` | [nodeStatus](nodeStatus.md) | Yes |  |
 

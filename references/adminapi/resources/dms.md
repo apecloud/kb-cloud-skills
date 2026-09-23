@@ -22,8 +22,23 @@
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/{schema}/{type}/{objectName}` | get the detail object info | [View](../operations/GetObjectInfo.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/history` | list the query History | [View](../operations/listQueryHistory.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/sqlExplain` | explain a SQL | [View](../operations/sqlExplain.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/sqlExplain/visual` | explain a SQL as a normalized visual execution plan | [View](../operations/visualSqlExplain.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/generateDDL` | support ddl and dml operations | [View](../operations/generateDDL.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/showData` | read data of table or view | [View](../operations/showData.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/context` | get Redis datasource data-management context | [View](../operations/getRedisContext.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/keys` | list Redis key summaries by SCAN cursor | [View](../operations/listRedisKeys.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/analysis` | analyze Redis keys by bounded SCAN sampling | [View](../operations/analyzeRedisKeys.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/key/detail` | get Redis key detail | [View](../operations/getRedisKeyDetail.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/key/mutate` | mutate Redis key data or metadata | [View](../operations/mutateRedisKey.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/workbench/execute` | execute a Redis Workbench command | [View](../operations/executeRedisWorkbenchCommand.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/pubsub/publish` | publish a Redis Pub/Sub message | [View](../operations/publishRedisMessage.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/pubsub/sessions` | create a Redis Pub/Sub polling session | [View](../operations/createRedisPubSubSession.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/pubsub/sessions/{sessionId}/messages` | list messages from a Redis Pub/Sub polling session | [View](../operations/listRedisPubSubMessages.md) |
+| DELETE | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/pubsub/sessions/{sessionId}` | close a Redis Pub/Sub polling session | [View](../operations/closeRedisPubSubSession.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/slowlog` | list Redis slow log entries | [View](../operations/listRedisSlowLog.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/slowlog/reset` | reset Redis slow log | [View](../operations/resetRedisSlowLog.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/info` | get Redis INFO output by section | [View](../operations/getRedisInfo.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/redis/cluster/topology` | get Redis Cluster topology | [View](../operations/getRedisClusterTopology.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/mongodb/databases` | list MongoDB databases | [View](../operations/listMongoDatabases.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/mongodb/databases/metadata` | list MongoDB database metadata | [View](../operations/listMongoDatabaseMetadata.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/mongodb/databases/{db}/collections` | list collections in a MongoDB database | [View](../operations/listMongoCollections.md) |

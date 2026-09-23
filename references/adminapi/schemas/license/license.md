@@ -14,6 +14,7 @@ License info
 | `unit` | string | Yes | The licensed unit, such as CPU or Node |
 | `quantity` | string | Yes | The licensed total count of the unit |
 | `engines` | engineQuota[] | Yes | The supported engines and their quotas |
+| `features` | string[] | No | The licensed enterprise features. An empty list means all features are unrestricted for backward compatibility; a list containing `none` disables every enterprise feature. |
 | `notAfter` | string (date-time) | Yes | The license expiration time |
 | `notBefore` | string (date-time) | Yes | The license start time |
 | `used` | number (double) | Yes | The used count of the unit |

@@ -6,7 +6,8 @@
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `id` | integer (int64) | Yes | session ID |
+| `id` | integer (int64) | No | numeric session ID, when the database exposes one that fits in int64 |
+| `sessionId` | string | No | native session ID used by the terminate API |
 | `user` | string | Yes | user name |
 | `tenant` | string | No | tenant name |
 | `host` | string | Yes | client host information |

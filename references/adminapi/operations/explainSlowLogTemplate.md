@@ -4,7 +4,7 @@
 **Explain cluster slow log template**
 **Operation ID:** `explainSlowLogTemplate`
 
-Explain a slow log template sample using DMS. The SQL is selected by templateId and time range; request body does not accept raw SQL. Only MySQL-compatible and PostgreSQL SELECT samples are supported.
+Explain a slow log template sample using DMS. The SQL is selected by templateId and time range; request body does not accept raw SQL. Only MySQL-compatible, PostgreSQL, and SQL Server SELECT samples are supported.
 
 ## Parameters
 
@@ -18,6 +18,18 @@ Explain a slow log template sample using DMS. The SQL is selected by templateId 
 | `componentName` | query | string | No |  |
 | `instanceName` | query | string | No |  |
 | `query` | query | string | No |  |
+| `minExecutionTime` | query | number (double) | No | Minimum slow log execution time in seconds. Decimal values are supported, for example 0.5. |
+| `maxExecutionTime` | query | number (double) | No | Maximum slow log execution time in seconds. Decimal values are supported, for example 0.5. |
+| `minLockTime` | query | number (double) | No | Minimum slow log lock time in seconds. Decimal values are supported, for example 0.001. |
+| `maxLockTime` | query | number (double) | No | Maximum slow log lock time in seconds. Decimal values are supported, for example 0.001. |
+| `minRowsExamined` | query | integer (int64) | No |  |
+| `maxRowsExamined` | query | integer (int64) | No |  |
+| `minRowsSent` | query | integer (int64) | No |  |
+| `maxRowsSent` | query | integer (int64) | No |  |
+| `dbName` | query | string | No | Filter slow logs whose database name contains this value. |
+| `userName` | query | string | No | Filter slow logs whose user name contains this value. |
+| `clientIp` | query | string | No | Filter slow logs whose client IP contains this value, or is within this CIDR range when the value is valid CIDR. |
+| `appName` | query | string | No | Filter slow logs whose application name contains this value. |
 
 ## Responses
 

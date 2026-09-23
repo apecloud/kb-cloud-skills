@@ -14,7 +14,7 @@
 | DELETE | `/admin/v1/autoInspections/{id}` | delete auto inspection | [View](../operations/deleteAutoInspection.md) |
 | PATCH | `/admin/v1/autoInspections/{id}` | update auto inspection | [View](../operations/updateAutoInspection.md) |
 | GET | `/admin/v1/organizations/{orgName}/inspectionTasksByOrg` | list inspection tasks by org | [View](../operations/listInspectionTasksByOrg.md) |
-| POST | `/admin/v1/organizations/{orgName}/inspectionTasksByOrg` | create inspection task by org | [View](../operations/createInspectionTaskByOrg.md) |
+| POST | `/admin/v1/organizations/{orgName}/inspectionTasksByOrg` | Trigger inspection for selected clusters in an organization | [View](../operations/createInspectionTaskByOrg.md) |
 | GET | `/admin/v1/organizations/{orgName}/inspectionTasksByOrg/{taskId}` | get inspection task by org | [View](../operations/getInspectionTaskByOrg.md) |
 | GET | `/admin/v1/environments/{environmentName}/inspectionTasksByEnv` | list inspection tasks by env | [View](../operations/listInspectionTasksByEnv.md) |
 | POST | `/admin/v1/environments/{environmentName}/inspectionTasksByEnv` | create inspection task by env | [View](../operations/createInspectionTaskByEnv.md) |

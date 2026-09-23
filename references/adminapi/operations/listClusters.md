@@ -11,6 +11,8 @@
 | `orgName` | query | string | No | Organization name, if envName is provided, orgName is required |
 | `envName` | query | string | No | Environment name |
 | `withStatic` | query | boolean | No | Whether to include static clusters |
+| `endpointHost` | query | string | No | Case-insensitive substring to match against the host part of cached cluster endpoints |
+| `includeEndpoints` | query | boolean | No | Whether to include cached user-visible endpoints in each cluster item |
 
 ## Responses
 

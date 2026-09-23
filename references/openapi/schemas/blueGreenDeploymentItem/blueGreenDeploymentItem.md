@@ -10,6 +10,8 @@ blueGreenDeploymentItem is the response to a blue-green deployment creation requ
 |-------|------|----------|-------------|
 | `deploymentID` | string | Yes | The ID of the blue-green deployment. |
 | `deploymentName` | string | No | The name of the blue-green deployment. |
+| `blueClusterVersion` | string | No |  |
+| `greenClusterVersion` | string | No |  |
 | `blueCluster` | [clusterListItem](clusterListItem.md) | No |  |
 | `greenCluster` | [clusterListItem](clusterListItem.md) | No |  |
 | `deploymentStatus` | [blueGreenDeploymentStatus](blueGreenDeploymentStatus.md) | No |  |

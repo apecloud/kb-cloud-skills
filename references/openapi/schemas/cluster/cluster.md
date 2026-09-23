@@ -47,8 +47,10 @@ KubeBlocks cluster details
 | `static` | boolean | No | if cluster is static cluster |
 | `networkMode` | [networkMode](networkMode.md) | No |  |
 | `serviceRefs` | serviceRef[] | No | serviceRefs used by this cluster |
-| `referencedBy` | serviceRef[] | No | this list of objects (currently, object is a cluster) that uses this cluster as a serviceRef |
+| `referencedBy` | clusterReference[] | No | this list of objects (currently, object is a cluster) that uses this cluster as a serviceRef |
 | `objectStorageConfig` | [clusterObjectStorageConfig](clusterObjectStorageConfig.md) | No |  |
 | `maintainceWindow` | [clusterMaintainceWindow](clusterMaintainceWindow.md) | No |  |
 | `schedulingPolicy` | [schedulingPolicyType](schedulingPolicyType.md) | No |  |
+| `schedulerName` | string | No | Effective scheduler used when the cluster was created. |
+| `reservationResourceClass` | [koordinatorReservationResourceClass](koordinatorReservationResourceClass.md) | No |  |
 

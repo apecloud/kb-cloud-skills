@@ -12,4 +12,5 @@
 | `serviceRef` | string | No | the name of the serviceRef defined in mode's serviceRefs.
 If set, it means a serviceRef can be used to replace this component.
  |
+| `readonlyEndpoint` | [modeReadonlyEndpoint](modeReadonlyEndpoint.md) | No |  |
 

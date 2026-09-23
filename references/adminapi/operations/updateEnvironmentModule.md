@@ -1,8 +1,10 @@
 # PATCH /admin/v1/environments/{environmentName}/modules
 
 **Resource:** [environment](../resources/environment.md)
-**update environment module**
+**Update an environment module**
 **Operation ID:** `updateEnvironmentModule`
+
+Performs the requested module action. Supported quick install and upgrade actions use dryRun=true for synchronous checks without changes; dryRun=false or omitted repeats the checks and submits an asynchronous task only when all checks pass. Other module actions keep their original behavior.
 
 ## Parameters
 
@@ -20,7 +22,7 @@
 
 | Status | Description |
 |--------|-------------|
-| 200 | Success |
+| 200 | The module action succeeded. A successful dry run returns an empty object; an asynchronous action returns taskId. |
 | 400 | (reference) |
 | 401 | (reference) |
 | 403 | (reference) |
@@ -29,9 +31,7 @@
 | 429 | (reference) |
 | 500 | (reference) |
 
-**Success Response Schema** (inline):
+**Success Response Schema:**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `taskId` | string | No | the task id |
+[environmentModuleActionResult](../schemas/environmentModuleActionResult/environmentModuleActionResult.md)
 

@@ -1,8 +1,10 @@
 # POST /admin/v1/organizations/{orgName}/inspectionTasksByOrg
 
 **Resource:** [inspection](../resources/inspection.md)
-**create inspection task by org**
+**Trigger inspection for selected clusters in an organization**
 **Operation ID:** `createInspectionTaskByOrg`
+
+Creates one inspection task per matching non-stopped cluster in the path organization. Omit engines or pass an empty array to select all engines. Omit clusterIDs or pass an empty array to select all clusters. When both arrays are non-empty, clusters must match both filters. All tasks and items are persisted in one transaction before asynchronous execution starts.
 
 ## Parameters
 
@@ -16,13 +18,14 @@
 
 **Content Types:** `application/json`
 
-**Schema:** [inspectionTask](../schemas/inspectionTask/inspectionTask.md)
+**Schema:** [inspectionTaskCreate](../schemas/inspectionTaskCreate/inspectionTaskCreate.md)
 
 ## Responses
 
 | Status | Description |
 |--------|-------------|
-| 204 | No content. |
+| 204 | Inspection tasks created and accepted for asynchronous execution. |
+| 400 | (reference) |
 | 401 | (reference) |
 | 403 | (reference) |
 | 404 | (reference) |

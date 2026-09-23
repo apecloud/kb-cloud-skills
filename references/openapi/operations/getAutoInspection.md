@@ -11,6 +11,7 @@
 | `id` | query | string | No | id of the auto inspection |
 | `orgName` | query | string | No | name of the Org |
 | `envName` | query | string | No | name of the environment |
+| `clusterName` | query | string | No | name of the cluster, must be used with orgName |
 
 ## Responses
 

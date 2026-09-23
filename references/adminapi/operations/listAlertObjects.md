@@ -8,6 +8,7 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
+| `orgName` | query | string | No | name of the Org |
 | `page` | query | integer | No | page number |
 | `pageSize` | query | integer | No | page size |
 

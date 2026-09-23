@@ -18,4 +18,5 @@ ComponentItem is the information of a component
 | `storageClass` | string | No | StorageClass name |
 | `volumes` | componentVolumeItem[] | No |  |
 | `systemAccountSecretName` | string | No | The name of the secret that contains the system account credentials |
+| `network` | [componentNetwork](componentNetwork.md) | No |  |
 

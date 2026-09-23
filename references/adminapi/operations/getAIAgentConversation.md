@@ -1,4 +1,4 @@
-# GET /admin/v1/organizations/{orgName}/ai-agent/conversations/{conversationId}
+# GET /admin/v1/ai-agent/conversations/{conversationId}
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Get an AI diagnosis conversation**
@@ -8,7 +8,6 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 
 ## Responses

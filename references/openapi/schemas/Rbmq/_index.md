@@ -1,6 +1,6 @@
 # Rbmq Schemas
 
-11 schemas in this group.
+12 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
@@ -10,6 +10,7 @@
 | [RbmqPermission](RbmqPermission.md) | object |  |
 | [RbmqAccountsList](RbmqAccountsList.md) | object |  |
 | [RbmqAccountRequest](RbmqAccountRequest.md) | object |  |
+| [RbmqPasswordUpdateRequest](RbmqPasswordUpdateRequest.md) | object | RabbitMQ account password update request. |
 | [RbmqVHost](RbmqVHost.md) | object |  |
 | [RbmqVHostList](RbmqVHostList.md) | array |  |
 | [RbmqMessageStats](RbmqMessageStats.md) | object |  |

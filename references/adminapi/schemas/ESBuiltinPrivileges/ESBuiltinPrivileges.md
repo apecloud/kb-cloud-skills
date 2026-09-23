@@ -1,0 +1,4 @@
+# ESBuiltinPrivileges
+
+**Type:** object
+

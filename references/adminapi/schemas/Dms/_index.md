@@ -1,6 +1,6 @@
 # Dms Schemas
 
-38 schemas in this group.
+59 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
@@ -24,6 +24,22 @@
 | [DmsQueryHistory](DmsQueryHistory.md) | object |  |
 | [DmsQueryHistoryList](DmsQueryHistoryList.md) | array |  |
 | [DmsExplainRequest](DmsExplainRequest.md) | object |  |
+| [DmsVisualExplainRequest](DmsVisualExplainRequest.md) | object |  |
+| [DmsExecutionPlanMode](DmsExecutionPlanMode.md) | enum |  |
+| [DmsExecutionPlanPlanningMode](DmsExecutionPlanPlanningMode.md) | enum |  |
+| [DmsExecutionPlanRawFormat](DmsExecutionPlanRawFormat.md) | enum |  |
+| [DmsExecutionPlanNodeCategory](DmsExecutionPlanNodeCategory.md) | enum |  |
+| [DmsExecutionPlanNodeCost](DmsExecutionPlanNodeCost.md) | object |  |
+| [DmsExecutionPlanNodeRows](DmsExecutionPlanNodeRows.md) | object |  |
+| [DmsExecutionPlanNodeTiming](DmsExecutionPlanNodeTiming.md) | object |  |
+| [DmsExecutionPlanNodeConditions](DmsExecutionPlanNodeConditions.md) | object |  |
+| [DmsExecutionPlanNode](DmsExecutionPlanNode.md) | object |  |
+| [DmsExecutionPlanEdgeRows](DmsExecutionPlanEdgeRows.md) | object |  |
+| [DmsExecutionPlanEdge](DmsExecutionPlanEdge.md) | object |  |
+| [DmsExecutionPlanSummary](DmsExecutionPlanSummary.md) | object |  |
+| [DmsExecutionPlanWarningSeverity](DmsExecutionPlanWarningSeverity.md) | enum |  |
+| [DmsExecutionPlanWarning](DmsExecutionPlanWarning.md) | object |  |
+| [DmsExecutionPlanResult](DmsExecutionPlanResult.md) | object |  |
 | [DmsGenerateDdlOperationType](DmsGenerateDdlOperationType.md) | enum | operation type |
 | [DmsTableColumn](DmsTableColumn.md) | object |  |
 | [DmsTableIndex](DmsTableIndex.md) | object |  |
@@ -42,3 +58,8 @@
 | [DmsObParameter](DmsObParameter.md) | object |  |
 | [DmsParameterList](DmsParameterList.md) | array |  |
 | [DmsObAlterParameter](DmsObAlterParameter.md) | object |  |
+| [DmsServiceAccount](DmsServiceAccount.md) | object | MinIO service account access-key |
+| [DmsServiceAccountList](DmsServiceAccountList.md) | array | MinIO service account access-key list |
+| [DmsServiceAccountCreateRequest](DmsServiceAccountCreateRequest.md) | object | MinIO service account access-key create request |
+| [DmsServiceAccountStatus](DmsServiceAccountStatus.md) | enum | MinIO service account status. |
+| [DmsServiceAccountUpdateRequest](DmsServiceAccountUpdateRequest.md) | object | MinIO service account access-key update request |

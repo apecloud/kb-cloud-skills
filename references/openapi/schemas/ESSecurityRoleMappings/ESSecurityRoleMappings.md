@@ -1,0 +1,4 @@
+# ESSecurityRoleMappings
+
+**Type:** object
+

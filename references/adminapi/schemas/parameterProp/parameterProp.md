@@ -16,4 +16,5 @@
 | `maximum` | string | No | The maximum value of the parameter |
 | `minimum` | string | No | The minimum value of the parameter |
 | `enum` | any[] | No | The value options of the parameter |
+| `unit` | string | No | The unit of the parameter value (e.g., seconds, bytes, ms, percentage) |
 

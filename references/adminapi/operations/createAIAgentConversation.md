@@ -1,14 +1,8 @@
-# POST /admin/v1/organizations/{orgName}/ai-agent/conversations
+# POST /admin/v1/ai-agent/conversations
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Create an AI diagnosis conversation**
 **Operation ID:** `createAIAgentConversation`
-
-## Parameters
-
-| Name | In | Type | Required | Description |
-|------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 
 ## Request Body
 

@@ -4,7 +4,7 @@
 **Get cluster slow log statistics**
 **Operation ID:** `getSlowLogStats`
 
-Get statistics summary for slow logs of a cluster
+Get statistics summary for slow logs of a cluster. When the same slow log filters are supplied, totalSlowLogs can be used as the filtered list preview count.
 
 ## Parameters
 
@@ -25,15 +25,10 @@ Get statistics summary for slow logs of a cluster
 | `maxRowsExamined` | query | integer (int64) | No |  |
 | `minRowsSent` | query | integer (int64) | No |  |
 | `maxRowsSent` | query | integer (int64) | No |  |
-| `dbName` | query | string | No |  |
-| `dbNameContains` | query | string | No |  |
-| `userName` | query | string | No |  |
-| `userNameContains` | query | string | No |  |
-| `clientIp` | query | string | No |  |
-| `clientIpContains` | query | string | No |  |
-| `clientIpCIDR` | query | string | No |  |
-| `appName` | query | string | No |  |
-| `appNameContains` | query | string | No |  |
+| `dbName` | query | string | No | Filter slow logs whose database name contains this value. |
+| `userName` | query | string | No | Filter slow logs whose user name contains this value. |
+| `clientIp` | query | string | No | Filter slow logs whose client IP contains this value, or is within this CIDR range when the value is valid CIDR. |
+| `appName` | query | string | No | Filter slow logs whose application name contains this value. |
 | `templateId` | query | string | No |  |
 | `unclassifiedOnly` | query | boolean | No |  |
 

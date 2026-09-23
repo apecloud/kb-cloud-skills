@@ -12,5 +12,7 @@ Configuration to provision infrastructure for this environment
 | `component` | [component](component.md) | Yes |  |
 | `nodePool` | [nodePool](nodePool.md) | No |  |
 | `storage` | [storageConfig](storageConfig.md) | No |  |
+| `victoriaMetrics` | [staticCluster](staticCluster.md) | No |  |
+| `victoriaLogs` | [staticCluster](staticCluster.md) | No |  |
 | `modules` | environmentModule[] | No | option modules of environment |
 

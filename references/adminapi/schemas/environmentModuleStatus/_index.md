@@ -4,4 +4,4 @@
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [environmentModuleStatus](environmentModuleStatus.md) | enum | Status of environment module |
+| [environmentModuleStatus](environmentModuleStatus.md) | enum | Status of an environment module. Enabled is only u |

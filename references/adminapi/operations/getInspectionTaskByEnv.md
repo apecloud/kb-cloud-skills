@@ -23,5 +23,5 @@
 
 **Success Response Schema:**
 
-Array of [inspectionTaskItem](../schemas/inspectionTaskItem/inspectionTaskItem.md)
+[inspectionTask](../schemas/inspectionTask/inspectionTask.md)
 

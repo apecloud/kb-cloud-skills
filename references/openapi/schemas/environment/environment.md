@@ -12,6 +12,7 @@ Environment info
 | `region` | string | Yes | Region |
 | `availabilityZones` | string[] | Yes | Availability Zones |
 | `networkConfig` | [networkConfig](networkConfig.md) | No |  |
+| `logBackend` | [logBackendType](logBackendType.md) | No |  |
 | `createdAt` | string (date-time) | Yes | CreatedAt is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC. Populated by the system. Read-only. Null for lists |
 | `description` | string | No | The description of the organization |
 | `displayName` | string | No | The display name of the context |
@@ -24,6 +25,7 @@ Environment info
 | `imageRegistry` | string | No | Image registry URL used by the environment. Must match image_registries.url, not image_registries.name. |
 | `extraInfo` | string | No | extra info for environment |
 | `kbVersion` | string | No | KubeBlocks version of the environment |
+| `ipPoolProviders` | ipPoolProvider[] | Yes | KBE Pod IP pool providers enabled for discovery and explicit pool selection. |
 | `namespaces` | string[] | No | namespace info for environment |
 | `defaultStorageClass` | string | Yes | the default storageClass for the environment |
 | `clusterValidationPolicy` | [clusterValidationPolicy](clusterValidationPolicy.md) | No |  |

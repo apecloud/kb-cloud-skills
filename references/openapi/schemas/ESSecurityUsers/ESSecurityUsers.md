@@ -1,0 +1,4 @@
+# ESSecurityUsers
+
+**Type:** object
+

@@ -14,7 +14,6 @@
 | `targetPort` | string | Yes |  |
 | `type` | string[] | Yes |  |
 | `supportsSystemUse` | boolean | No | whether the endpoint supports system use, such as health check, dms, databases & accounts management etc. |
-| `supportsReadonly` | boolean | No | whether the engine supports readonly endpoint |
 | `servicePattern` | [engineOptionsServicePattern](engineOptionsServicePattern.md) | No |  |
 | `serviceNameRegex` | string | No | ServiceName regular expression |
 | `serviceName` | string | No | service suffix, defined in ComponentDefinition |

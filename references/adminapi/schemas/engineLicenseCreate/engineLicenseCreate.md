@@ -12,5 +12,5 @@
 | `expiredAt` | string (date-time) | No | Expiration date and time of the license (optional) |
 | `environmentID` | string | No | Environment ID of the license (optional) |
 | `type` | string | Yes | Type of the license. Determines whether licenseFile is required. |
-| `licenseFile` | string (binary) | No | The license file to upload. Required when type is not NodeScope; optional when type is NodeScope. |
+| `licenseFile` | string (binary) | No | The license file to upload. Required when type is not NodeScope; optional when type is NodeScope. For engines with engineOption.license.files, generated SDKs can still upload an engine-defined JSON license bundle through this field. Direct multipart callers should upload each file using the configured license.files[].name as the form field name. |
 

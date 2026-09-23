@@ -20,7 +20,7 @@ Update a RabbitMQ account password
 
 **Content Types:** `application/json`
 
-**Schema:** [RbmqUser](../schemas/Rbmq/RbmqUser.md)
+**Schema:** [RbmqPasswordUpdateRequest](../schemas/Rbmq/RbmqPasswordUpdateRequest.md)
 
 ## Responses
 

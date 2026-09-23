@@ -1,14 +1,8 @@
-# GET /admin/v1/organizations/{orgName}/ai-agent/status
+# GET /admin/v1/ai-agent/status
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Get AI diagnosis agent status**
 **Operation ID:** `getAIAgentStatus`
-
-## Parameters
-
-| Name | In | Type | Required | Description |
-|------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 
 ## Responses
 

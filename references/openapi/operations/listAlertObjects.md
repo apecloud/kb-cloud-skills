@@ -11,6 +11,9 @@
 | `orgName` | path | string | Yes | name of the Org |
 | `page` | query | integer | No | page number |
 | `pageSize` | query | integer | No | page size |
+| `clusterName` | query | string | No | filter by cluster name |
+| `status` | query | string | No | filter by alert status |
+| `severity` | query | string | No | filter by alert severity |
 
 ## Responses
 

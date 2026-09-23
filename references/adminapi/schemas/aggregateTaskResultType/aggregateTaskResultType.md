@@ -9,3 +9,4 @@ Specifies the type of the aggregate task result.
 - `green`
 - `yellow`
 - `red`
+- `unknown`

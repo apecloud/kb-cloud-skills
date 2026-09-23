@@ -4,6 +4,14 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/config` | Get external JAR capability and configuration | [View](../operations/getClusterJarConfig.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars` | List external JAR versions with metadata and per-instance synchronization state | [View](../operations/listClusterJars.md) |
+| POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars` | Upload an immutable JAR version | [View](../operations/uploadClusterJar.md) |
+| DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}` | Delete an unpublished JAR version | [View](../operations/deleteClusterJar.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/download` | Download the original JAR | [View](../operations/downloadClusterJar.md) |
+| POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/distribute` | Publish a JAR with optimistic manifest version checking | [View](../operations/distributeClusterJar.md) |
+| POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/retry` | Retry synchronization of published JARs | [View](../operations/retryClusterJar.md) |
+| POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/archive` | Archive a JAR while retaining published files and startup synchronization | [View](../operations/archiveClusterJar.md) |
 | DELETE | `/admin/v1/user/apikey/{keyName}` | Delete apikey | [View](../operations/deleteApikey.md) |
 | PATCH | `/admin/v1/user/apikey/{keyName}` | Update apikey information | [View](../operations/patchAPIkey.md) |
 | GET | `/admin/v1/user/apikeys` | Get apikeys of the authenticated user | [View](../operations/readUserApikeys.md) |
@@ -57,6 +65,7 @@
 | POST | `/admin/v1/organizations/{orgName}/tags` | Create cluster tags | [View](../operations/createTag.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/autohealing` | list autohealing job | [View](../operations/getAutohealing.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/metrics` | Query cluster metrics | [View](../operations/queryClusterMetrics.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/storageUsageHistory` | Get cluster storage usage history | [View](../operations/getClusterStorageUsageHistory.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/instances/metrics` | Get instaces metrics in cluster | [View](../operations/getInstacesMetrics.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/tls` | Get cluster TLS certificate | [View](../operations/getTLSCertificate.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/tls` | Enable or disable cluster TLS | [View](../operations/tlsSwitcher.md) |
@@ -65,6 +74,7 @@
 | DELETE | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/ipWhitelist/{ipWhitelistId}` | Delete IP whitelist | [View](../operations/deleteIPWhiteList.md) |
 | PATCH | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/ipWhitelist/{ipWhitelistId}` | Update IP whitelist | [View](../operations/updateIPWhitelist.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/haHistory` | describe cluster HA history | [View](../operations/describeClusterHaHistory.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/modeTransition` | Transition cluster engine mode | [View](../operations/transitionClusterMode.md) |
 | GET | `/admin/v1/organizations/{orgName}/events` | List events | [View](../operations/listOrgEvents.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/parameters` | List parameter properties of the cluster | [View](../operations/listParameterProps.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/parameterHistories` | List parameters history of the cluster | [View](../operations/listParametersHistory.md) |
@@ -89,6 +99,7 @@
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/{schema}/{type}/{objectName}` | get the detail object info | [View](../operations/GetObjectInfo.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/history` | list the query History | [View](../operations/listQueryHistory.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/sqlExplain` | explain a SQL | [View](../operations/sqlExplain.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/sqlExplain/visual` | explain a SQL as a normalized visual execution plan | [View](../operations/visualSqlExplain.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/generateDDL` | support ddl and dml operations | [View](../operations/generateDDL.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/showData` | read data of table or view | [View](../operations/showData.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/sessions` | list all session for the cluster | [View](../operations/listSessionsOld.md) |
@@ -106,6 +117,13 @@
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/audit` | Query cluster audit logs | [View](../operations/queryAuditLogs.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/error` | Query cluster error logs | [View](../operations/queryErrorLogs.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/hits` | Query log hits histogram | [View](../operations/queryLogHits.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/pod` | Query Loki pod logs | [View](../operations/queryLokiPodLogs.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/running` | Query Loki running logs | [View](../operations/queryLokiRunningLogs.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/error` | Query Loki error logs | [View](../operations/queryLokiErrorLogs.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/slow` | Query Loki slow logs | [View](../operations/queryLokiSlowLogs.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/audit` | Query Loki audit logs | [View](../operations/queryLokiAuditLogs.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/slow/stats` | Query Loki slow-log statistics | [View](../operations/getLokiSlowLogStats.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/loki/export` | Export Loki logs | [View](../operations/exportLokiClusterLogs.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/reconfigure` | Update cluster configuration | [View](../operations/reconfigureCluster.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/restart` | Restart cluster | [View](../operations/restartCluster.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/rebuildInstance` | rebuild the instance | [View](../operations/rebuildInstance.md) |
@@ -198,10 +216,47 @@
 | GET | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/consumer-groups` | List all consumer groups | [View](../operations/listKafkaConsumerGroups.md) |
 | GET | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/consumer-groups/{groupId}` | Get consumer group describe | [View](../operations/getKafkaConsumerGroupDescribe.md) |
 | DELETE | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/consumer-groups/{groupId}` | Delete consumer group | [View](../operations/deleteKafkaConsumerGroup.md) |
+| GET | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts` | List cluster accounts | [View](../operations/listKafkaAccounts.md) |
+| POST | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts` | Create cluster account | [View](../operations/createKafkaAccount.md) |
+| DELETE | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete cluster account | [View](../operations/deleteKafkaAccount.md) |
+| PATCH | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | update cluster account | [View](../operations/updateKafkaAccount.md) |
+| GET | `/admin/v1/data/hive/organizations/{orgName}/clusters/{clusterName}/accounts` | Get Hive accounts | [View](../operations/getHiveAccounts.md) |
+| POST | `/admin/v1/data/hive/organizations/{orgName}/clusters/{clusterName}/accounts` | Create Hive account | [View](../operations/createHiveAccount.md) |
+| DELETE | `/admin/v1/data/hive/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete hive account | [View](../operations/deleteHiveAccount.md) |
+| PATCH | `/admin/v1/data/hive/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | update hive account | [View](../operations/updateHiveAccount.md) |
 | GET | `/admin/v1/data/redis/organizations/{orgName}/clusters/{clusterName}/accounts` | list redis accounts | [View](../operations/listRedisAccounts.md) |
 | POST | `/admin/v1/data/redis/organizations/{orgName}/clusters/{clusterName}/accounts` | create redis account | [View](../operations/createRedisAccount.md) |
 | DELETE | `/admin/v1/data/redis/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | delete redis account | [View](../operations/deleteRedisAccount.md) |
 | PATCH | `/admin/v1/data/redis/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | update redis account | [View](../operations/updateRedisAccount.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts` | List Elasticsearch security users | [View](../operations/listElasticsearchSecurityUsers.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/{username}` | Get Elasticsearch security user | [View](../operations/getElasticsearchSecurityUser.md) |
+| PUT | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/{username}` | Create or update Elasticsearch security user | [View](../operations/putElasticsearchSecurityUser.md) |
+| DELETE | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/{username}` | Delete Elasticsearch security user | [View](../operations/deleteElasticsearchSecurityUser.md) |
+| PATCH | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/{username}` | Change Elasticsearch account password | [View](../operations/changeElasticsearchSecurityUserPassword.md) |
+| PATCH | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/{username}/lock` | Lock Elasticsearch account | [View](../operations/lockElasticsearchSecurityUser.md) |
+| PATCH | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/{username}/unlock` | Unlock Elasticsearch account | [View](../operations/unlockElasticsearchSecurityUser.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/roles` | List Elasticsearch security roles | [View](../operations/listElasticsearchSecurityRoles.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Get Elasticsearch security role | [View](../operations/getElasticsearchSecurityRole.md) |
+| PUT | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Create or update Elasticsearch security role | [View](../operations/putElasticsearchSecurityRole.md) |
+| DELETE | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Delete Elasticsearch security role | [View](../operations/deleteElasticsearchSecurityRole.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/role-mappings` | List Elasticsearch security role mappings | [View](../operations/listElasticsearchSecurityRoleMappings.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/role-mappings/{mappingName}` | Get Elasticsearch security role mapping | [View](../operations/getElasticsearchSecurityRoleMapping.md) |
+| PUT | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/role-mappings/{mappingName}` | Create or update Elasticsearch security role mapping | [View](../operations/putElasticsearchSecurityRoleMapping.md) |
+| DELETE | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/role-mappings/{mappingName}` | Delete Elasticsearch security role mapping | [View](../operations/deleteElasticsearchSecurityRoleMapping.md) |
+| GET | `/admin/v1/data/elasticsearch/organizations/{orgName}/clusters/{clusterName}/accounts/privileges/builtin` | Get Elasticsearch builtin privileges | [View](../operations/getElasticsearchBuiltinPrivileges.md) |
+| GET | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts` | List ClickHouse accounts | [View](../operations/listClickhouseAccounts.md) |
+| POST | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts` | Create a ClickHouse account with optional roles | [View](../operations/createClickhouseAccount.md) |
+| DELETE | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete a ClickHouse account | [View](../operations/deleteClickhouseAccount.md) |
+| PATCH | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Update a ClickHouse account password | [View](../operations/updateClickhouseAccountPassword.md) |
+| GET | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/roles` | List the roles granted to a ClickHouse account | [View](../operations/listClickhouseAccountRoles.md) |
+| PUT | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/roles` | Update the roles granted to a ClickHouse account | [View](../operations/updateClickhouseAccountRoles.md) |
+| GET | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/roles` | List ClickHouse roles | [View](../operations/listClickhouseRoles.md) |
+| POST | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/roles` | Create a ClickHouse role with privileges | [View](../operations/createClickhouseRole.md) |
+| GET | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Get the grants (privileges) of a ClickHouse role | [View](../operations/getClickhouseRoleGrants.md) |
+| DELETE | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Delete a ClickHouse role | [View](../operations/deleteClickhouseRole.md) |
+| POST | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}/privileges` | Grant privileges to a ClickHouse role | [View](../operations/grantClickhouseRolePrivileges.md) |
+| DELETE | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}/privileges` | Revoke privileges from a ClickHouse role | [View](../operations/revokeClickhouseRolePrivileges.md) |
+| GET | `/admin/v1/data/clickhouse/organizations/{orgName}/clusters/{clusterName}/accounts/privileges` | List privileges supported by the ClickHouse server | [View](../operations/listClickhousePrivileges.md) |
 | GET | `/admin/v1/data/rabbitmq/organizations/{orgName}/clusters/{clusterName}/accounts` | List RabbitMQ accounts | [View](../operations/listRabbitAccounts.md) |
 | POST | `/admin/v1/data/rabbitmq/organizations/{orgName}/clusters/{clusterName}/accounts` | Create RabbitMQ account | [View](../operations/createRabbitAccount.md) |
 | DELETE | `/admin/v1/data/rabbitmq/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete RabbitMQ account | [View](../operations/deleteRabbitAccount.md) |
@@ -219,10 +274,27 @@
 | GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/databases/{databaseName}` |  | [View](../operations/getDatabase.md) |
 | DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/databases/{databaseName}` | Delete cluster database | [View](../operations/deleteDatabase.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/databases/{databaseName}` | update database config | [View](../operations/updateDatabaseConfig.md) |
+| GET | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts` | listSeaweedFSAccounts | [View](../operations/listSeaweedFSAccounts.md) |
+| POST | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts` | createSeaweedFSAccount | [View](../operations/createSeaweedFSAccount.md) |
+| DELETE | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | deleteSeaweedFSAccount | [View](../operations/deleteSeaweedFSAccount.md) |
+| PATCH | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | updateSeaweedFSAccount | [View](../operations/updateSeaweedFSAccount.md) |
+| GET | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/root-password` | getRootSeaweedFSAccountPassword | [View](../operations/getRootSeaweedFSAccountPassword.md) |
+| PATCH | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/privileges` | updateSeaweedFSAccountPrivileges | [View](../operations/updateSeaweedFSAccountPrivileges.md) |
+| GET | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/policies` | listSeaweedFSPolicies | [View](../operations/listSeaweedFSPolicies.md) |
+| PUT | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/policies/{policyName}` | putSeaweedFSPolicy | [View](../operations/putSeaweedFSPolicy.md) |
+| DELETE | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/policies/{policyName}` | deleteSeaweedFSPolicy | [View](../operations/deleteSeaweedFSPolicy.md) |
+| PUT | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/policies` | bindSeaweedFSPolicies | [View](../operations/bindSeaweedFSPolicies.md) |
+| POST | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/access-keys` | createSeaweedFSAccessKey | [View](../operations/createSeaweedFSAccessKey.md) |
+| DELETE | `/admin/v1/data/seaweedfs/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/access-keys/{accessKey}` | deleteSeaweedFSAccessKey | [View](../operations/deleteSeaweedFSAccessKey.md) |
 | GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts` | List cluster accounts | [View](../operations/listAccounts.md) |
 | POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts` | Create cluster account | [View](../operations/createAccount.md) |
 | DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete cluster account | [View](../operations/deleteAccount.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | update cluster account | [View](../operations/updateAccount.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys` | List MinIO access keys | [View](../operations/listServiceAccounts.md) |
+| POST | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys` | Create MinIO access key | [View](../operations/createServiceAccount.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Get MinIO access key | [View](../operations/getServiceAccount.md) |
+| DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Delete MinIO access key | [View](../operations/deleteServiceAccount.md) |
+| PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Update MinIO access key | [View](../operations/updateServiceAccount.md) |
 | GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/root-password` | get root account password | [View](../operations/getRootAccountPassword.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/privileges` | update account privileges | [View](../operations/updateAccountPrivileges.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/lock` | Lock cluster account | [View](../operations/lockAccount.md) |
@@ -232,6 +304,13 @@
 | GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/accounts` | List mongodb accounts | [View](../operations/listMongoDBAccounts.md) |
 | POST | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/accounts` | Create mongodb account | [View](../operations/createMongoDBAccount.md) |
 | DELETE | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete mongodb account | [View](../operations/deleteMongoDBAccount.md) |
+| GET | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/roles` | List Milvus roles | [View](../operations/listMilvusRoles.md) |
+| POST | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/roles` | Create Milvus role | [View](../operations/createMilvusRole.md) |
+| GET | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Get Milvus role | [View](../operations/getMilvusRole.md) |
+| PUT | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Update Milvus role | [View](../operations/updateMilvusRole.md) |
+| DELETE | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/roles/{roleName}` | Delete Milvus role | [View](../operations/deleteMilvusRole.md) |
+| PATCH | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Update Milvus account password | [View](../operations/updateMilvusAccountPassword.md) |
+| PUT | `/admin/v1/data/milvus/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/roles` | Update Milvus account roles | [View](../operations/updateMilvusAccountRoles.md) |
 | DELETE | `/admin/v1/data/mssql/organizations/{orgName}/clusters/{clusterName}/accounts` | delete mssql account compatible with windows account | [View](../operations/deleteMssqlAccount.md) |
 | PATCH | `/admin/v1/data/mssql/organizations/{orgName}/clusters/{clusterName}/accounts` | update mssql account compatible with windows account | [View](../operations/updateMssqlAccount.md) |
 | PATCH | `/admin/v1/data/mssql/organizations/{orgName}/clusters/{clusterName}/tde` | batch modify database tde status | [View](../operations/manageMssqlTDEDatabase.md) |

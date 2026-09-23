@@ -22,6 +22,16 @@ KubeBlocks cluster information
 | `parentId` | string | No | When two clusters have a relationship, parentId records the parent cluster id.Can be empty when there is no relationship |
 | `parentName` | string | No | the name of parent cluster |
 | `parentDisplayName` | string | No | the display name of parent cluster |
+| `dependencyType` | string | No | the dependency relationship between the cluster and the refClusterName
+query parameter. `Dependency` means the cluster is referenced by the
+refClusterName cluster (the refClusterName depends on it); `Dependent`
+means the cluster references the refClusterName cluster (it depends on
+the refClusterName). Only set when list clusters with refClusterName.
+ |
+| `dependencyLabel` | object | No | the localized title of the serviceRef through which the refClusterName
+cluster depends on the returned cluster. Only set for clusters with
+dependencyType `Dependency`.
+ |
 | `clusterType` | [clusterType](clusterType.md) | No |  |
 | `delay` | number (double) | No |  |
 | `status` | string | Yes | Cluster Status |
@@ -32,4 +42,7 @@ KubeBlocks cluster information
 | `storage` | string | No | Cluster main component storage |
 | `codeShort` | string | No | Cluster main component codeShort |
 | `orgName` | string | No | Org Name |
+| `project` | string | No | Name of project, it is the alias of environment namespace |
+| `tags` | tag[] | No | Tags bound to the cluster |
+| `endpoints` | endpoint[] | No | Cached user-visible endpoints of the cluster; omitted unless includeEndpoints is true |
 

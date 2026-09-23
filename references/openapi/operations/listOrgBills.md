@@ -12,8 +12,8 @@
 | `billID` | query | string | No | The ID of the bill |
 | `clusterID` | query | string | No | The ID of the cluster |
 | `projectName` | query | string | No | name of the project |
-| `aggregationTime` | query | aggregationTimeType | No | The type of aggregation time |
-| `aggregationGroup` | query | orgAggregationGroupType | No | The type of aggregation group |
+| `aggregationTime` | query | aggregationTimeType | Yes | The type of aggregation time |
+| `aggregationGroup` | query | orgAggregationGroupType | Yes | The type of aggregation group |
 
 ## Responses
 

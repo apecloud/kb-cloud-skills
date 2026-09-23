@@ -25,3 +25,7 @@
 |--------|-------------|
 | 200 | A successful response. |
 
+**Success Response Schema:**
+
+[testConnectResponse](../schemas/testConnectResponse/testConnectResponse.md)
+

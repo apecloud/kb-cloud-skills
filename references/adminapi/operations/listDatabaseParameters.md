@@ -8,8 +8,8 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `engineName` | query | string | No | engine Name |
-| `component` | query | string | No | component type |
+| `engineName` | query | string | Yes | engine Name |
+| `component` | query | string | Yes | component type |
 
 ## Responses
 

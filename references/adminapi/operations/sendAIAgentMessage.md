@@ -1,4 +1,4 @@
-# POST /admin/v1/organizations/{orgName}/ai-agent/conversations/{conversationId}/messages
+# POST /admin/v1/ai-agent/conversations/{conversationId}/messages
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Send a user message and start or continue AI diagnosis**
@@ -8,7 +8,6 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 
 ## Request Body

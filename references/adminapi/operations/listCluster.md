@@ -18,6 +18,8 @@
 | `tagValues` | query | string[] | No | A list of tags' values corresponding to the tagKeys |
 | `licenseId` | query | integer | No | license id |
 | `refClusterName` | query | string | No | list clusters referenced by this cluster |
+| `endpointHost` | query | string | No | Case-insensitive substring to match against the host part of cached cluster endpoints |
+| `includeEndpoints` | query | boolean | No | Whether to include cached user-visible endpoints in each cluster item |
 
 ## Responses
 

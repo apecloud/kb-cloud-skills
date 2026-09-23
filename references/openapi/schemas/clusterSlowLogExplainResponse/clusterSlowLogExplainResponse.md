@@ -17,4 +17,6 @@ Explain response for a selected slow log template sample
 | `executionTime` | number (double) | No | Execution time of the selected sample in seconds |
 | `sample` | [clusterExecutionLogItem](clusterExecutionLogItem.md) | No |  |
 | `explainResult` | [DmsQueryResponse](DmsQueryResponse.md) | No |  |
+| `diagnosis` | [clusterSlowLogDiagnosis](clusterSlowLogDiagnosis.md) | No |  |
+| `planNodes` | clusterSlowLogPlanNode[] | No |  |
 

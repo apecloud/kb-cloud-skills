@@ -10,6 +10,7 @@
 | `resourceType` | [autoInspectionResourceType](autoInspectionResourceType.md) | Yes |  |
 | `resourceID` | string | No |  |
 | `resourceName` | string | Yes |  |
+| `orgName` | string | No |  |
 | `creator` | string | Yes |  |
 | `schedule` | string | No |  |
 | `runEvery` | [autoInspectionRunUnit](autoInspectionRunUnit.md) | No |  |

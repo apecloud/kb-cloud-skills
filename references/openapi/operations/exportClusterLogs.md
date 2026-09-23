@@ -15,7 +15,7 @@ Export cluster logs and return as a file download
 | `logType` | query | string | Yes | Log type: runninglog, errorlog, slow, auditlog |
 | `startTime` | query | integer (int64) | No | Start time in epoch nanoseconds. If omitted, exports from the earliest available log |
 | `endTime` | query | integer (int64) | No | End time in epoch nanoseconds. If omitted, exports up to the latest available log |
-| `format` | query | string | No | Export format: csv, raw, jsonl |
+| `format` | query | string | No | Export format: csv, raw, jsonl. The JSON-style slow log export format is newline-delimited JSON (jsonl), not a single JSON array. |
 | `query` | query | string | No | Optional search query |
 | `filename` | query | string | No | Optional log filename filter |
 | `componentName` | query | string | No | Optional component name filter |
@@ -28,15 +28,10 @@ Export cluster logs and return as a file download
 | `maxRowsExamined` | query | integer (int64) | No |  |
 | `minRowsSent` | query | integer (int64) | No |  |
 | `maxRowsSent` | query | integer (int64) | No |  |
-| `dbName` | query | string | No |  |
-| `dbNameContains` | query | string | No |  |
-| `userName` | query | string | No |  |
-| `userNameContains` | query | string | No |  |
-| `clientIp` | query | string | No |  |
-| `clientIpContains` | query | string | No |  |
-| `clientIpCIDR` | query | string | No |  |
-| `appName` | query | string | No |  |
-| `appNameContains` | query | string | No |  |
+| `dbName` | query | string | No | Filter slow logs whose database name contains this value. |
+| `userName` | query | string | No | Filter slow logs whose user name contains this value. |
+| `clientIp` | query | string | No | Filter slow logs whose client IP contains this value, or is within this CIDR range when the value is valid CIDR. |
+| `appName` | query | string | No | Filter slow logs whose application name contains this value. |
 | `templateId` | query | string | No |  |
 | `unclassifiedOnly` | query | boolean | No |  |
 | `maxLines` | query | integer (int64) | No | Maximum number of lines to export. Defaults to 100000 if omitted |

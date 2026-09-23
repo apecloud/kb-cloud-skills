@@ -4,4 +4,4 @@
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [inspectionScriptCategory](inspectionScriptCategory.md) | enum | Specifies the category of the inspection script. |
+| [inspectionScriptCategory](inspectionScriptCategory.md) | enum | Current inspection category vocabulary. Existing l |

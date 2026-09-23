@@ -27,5 +27,7 @@ Cluster APIs
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/tde` | Get TDE status | [View](../operations/getTDE.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/tde` | Enable TDE | [View](../operations/updateTDE.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/metrics` | Query cluster metrics | [View](../operations/queryClusterMetrics.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/storageUsageHistory` | Get cluster storage usage history | [View](../operations/getClusterStorageUsageHistory.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/instances/metrics` | Get instaces metrics in cluster | [View](../operations/getInstacesMetrics.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/haHistory` | describe cluster HA history | [View](../operations/describeClusterHaHistory.md) |
+| POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/modeTransition` | Transition cluster engine mode | [View](../operations/transitionClusterMode.md) |

@@ -9,16 +9,9 @@ Storage config for environment
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `storages` | environmentStorage[] | Yes | these storages will be created |
-| `log` | object | Yes | the storage config for log |
 | `backup` | object | Yes | the storage config for backup |
 
 ## Nested Fields
-
-### `log`
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `storageName` | string | Yes | the name of storage |
 
 ### `backup`
 

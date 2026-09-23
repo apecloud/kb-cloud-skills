@@ -8,6 +8,7 @@ Environment info
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `logBackend` | [logBackendType](logBackendType.md) | No |  |
 | `provider` | string | Yes | Cloud Provider |
 | `region` | string | Yes | Cloud Region |
 | `availabilityZones` | string[] | Yes | Availability Zones |
@@ -31,4 +32,6 @@ Environment info
 | `architecture` | [environmentArchitecture](environmentArchitecture.md) | No |  |
 | `dns` | [dns](dns.md) | No |  |
 | `slaEnabled` | boolean | No | whether to enable calculate the cluster SLA for the environment |
+| `koordinatorEnabled` | boolean | No | Whether this environment has Koordinator installed and can use Koordinator scheduler and reservations. |
+| `ipPoolProviders` | ipPoolProvider[] | Yes | KBE Pod IP pool providers enabled for discovery and explicit pool selection. |
 

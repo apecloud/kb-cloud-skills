@@ -27,5 +27,8 @@ Environment info
 | `clusterValidationPolicy` | [clusterValidationPolicy](clusterValidationPolicy.md) | No |  |
 | `provider` | string | No | Cloud Provider |
 | `slaEnabled` | boolean | No | whether to enable calculate the cluster SLA for the environment |
+| `koordinatorEnabled` | boolean | No | Whether this environment has Koordinator installed and can use Koordinator scheduler and reservations. |
+| `ipPoolProviders` | ipPoolProvider[] | No | KBE Pod IP pool providers enabled for discovery and explicit pool selection. An empty array disables this capability. |
 | `clusterSchedulingPolicy` | [clusterSchedulingPolicy](clusterSchedulingPolicy.md) | No |  |
+| `additionalTopologyKeys` | string[] | No | Additional Kubernetes topology label keys used by subsequently created or re-rendered clusters; existing Pods are not migrated automatically. Omit or use null to preserve the current value; use an empty array to clear all additional keys. Values must be valid Kubernetes qualified label keys. Infrastructure integrations or administrators must label all eligible nodes consistently; missing labels can cause unintended scheduling behavior and undermine failure-domain isolation. Too few eligible topology domains can leave Pods Pending under hard anti-affinity. If the Kubernetes LimitPodHardAntiAffinityTopology admission plugin is enabled, Pod creation is rejected for required anti-affinity using topology keys other than kubernetes.io/hostname, which can prevent the database cluster from becoming ready. |
 

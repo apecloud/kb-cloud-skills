@@ -24,4 +24,6 @@ Environment creation info
 | `overwrite` | boolean | No | overwrite a environment if it has been added before |
 | `dns` | [dns](dns.md) | No |  |
 | `sla` | boolean | No | whether to enable calculate the cluster SLA for the environment |
+| `koordinatorEnabled` | boolean | No | Whether this environment has Koordinator installed and can use Koordinator scheduler and reservations. |
+| `ipPoolProviders` | ipPoolProvider[] | No | KBE Pod IP pool providers enabled for discovery and explicit pool selection. |
 

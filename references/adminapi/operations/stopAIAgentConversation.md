@@ -1,4 +1,4 @@
-# POST /admin/v1/organizations/{orgName}/ai-agent/conversations/{conversationId}/stop
+# POST /admin/v1/ai-agent/conversations/{conversationId}/stop
 
 **Resource:** [AI Agent](../resources/AI-Agent.md)
 **Stop the current AI diagnosis turn**
@@ -8,7 +8,6 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 
 ## Responses

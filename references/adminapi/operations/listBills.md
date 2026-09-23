@@ -12,8 +12,8 @@
 | `clusterID` | query | string | No | The ID of the cluster |
 | `orgName` | query | string | No | name of the organization |
 | `projectName` | query | string | No | name of the project |
-| `aggregationTime` | query | aggregationTimeType | No | The type of aggregation time |
-| `aggregationGroup` | query | aggregationGroupType | No | The type of aggregation group |
+| `aggregationTime` | query | aggregationTimeType | Yes | The type of aggregation time |
+| `aggregationGroup` | query | aggregationGroupType | Yes | The type of aggregation group |
 
 ## Responses
 
