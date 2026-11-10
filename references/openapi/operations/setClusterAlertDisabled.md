@@ -1,7 +1,7 @@
 # PATCH /api/v1/organizations/{orgName}/alerts/cluster/{clusterName}
 
 **Resource:** [clusterAlertSwitch](../resources/clusterAlertSwitch.md)
-**Set cluster alert disabled or enabled**
+**Update cluster alert settings**
 **Operation ID:** `setClusterAlertDisabled`
 
 ## Parameters

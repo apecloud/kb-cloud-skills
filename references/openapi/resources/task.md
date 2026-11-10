@@ -9,3 +9,4 @@
 | GET | `/api/v1/organizations/{orgName}/tasks/{taskId}` | Get task detail | [View](../operations/getTask.md) |
 | GET | `/api/v1/organizations/{orgName}/tasks/{taskId}/events` | List operation events related to a task | [View](../operations/listTaskEvents.md) |
 | POST | `/api/v1/organizations/{orgName}/tasks/{taskId}/cancel` | Cancel a task | [View](../operations/cancelTask.md) |
+| POST | `/api/v1/organizations/{orgName}/tasks/{taskId}/abort` | Force abort a task | [View](../operations/abortTask.md) |

@@ -10,7 +10,7 @@ OpsExpose is the payload to expose a KubeBlocks cluster
 |-------|------|----------|-------------|
 | `component` | string | Yes |  |
 | `enable` | boolean | Yes |  |
-| `readonly` | boolean | No |  |
+| `readonly` | boolean | No | Select the configured read-only role. Must be true for internal exposure. |
 | `type` | [opsExposeType](opsExposeType.md) | Yes |  |
 | `vpcServiceType` | [opsExposeVPCServiceType](opsExposeVPCServiceType.md) | No |  |
 | `portsMapping` | object[] | No |  |

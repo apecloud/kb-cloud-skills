@@ -8,6 +8,10 @@ Org info
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `status` | [orgStatus](orgStatus.md) | Yes |  |
+| `expiredAt` | string (date-time) | Yes |  |
+| `purgeError` | string | No |  |
+| `allowedActions` | string[] | Yes |  |
 | `createdAt` | string (date-time) | Yes | CreatedAt is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.
 
 Populated by the system. Read-only. Null for lists |

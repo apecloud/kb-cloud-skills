@@ -14,6 +14,7 @@ Instance is the information of KubeBlocks cluster instances
 | `cluster` | string | Yes | Cluster name |
 | `componentName` | string | No | Component name |
 | `componentDef` | string | No | ComponentDefinition name |
+| `instanceTemplate` | string | No | Instance template name within the actual component. Omitted when no template identity is available. |
 | `component` | string | Yes | component type, refer to componentDef and support NamePrefix |
 | `cpu` | string | Yes | cpu with uint cores. |
 | `createdAt` | string | Yes | created at |

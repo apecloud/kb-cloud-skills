@@ -16,6 +16,11 @@
 | GET | `/admin/v1/organizations/{orgName}/replication/channel/{channelID}/logs` | Query data channel logs | [View](../operations/queryDataChannelLogs.md) |
 | GET | `/admin/v1/organizations/{orgName}/replication/channel/{channelID}/containers` | Query data channel module pod containers | [View](../operations/queryDataChannelContainers.md) |
 | GET | `/admin/v1/organizations/{orgName}/replication/channel/parameters` | List Data Channel Parameters | [View](../operations/listDataChannelParameters.md) |
+| GET | `/admin/v1/replication/endpoints` | List Data Endpoints | [View](../operations/listAdminDataEndpoints.md) |
+| POST | `/admin/v1/organizations/{orgName}/replication/endpoint` | Create a new data endpoint | [View](../operations/createAdminDataEndpoint.md) |
+| GET | `/admin/v1/organizations/{orgName}/replication/endpoint/{endpointID}` | Get Data Endpoint Details | [View](../operations/getDataEndpoint.md) |
+| DELETE | `/admin/v1/organizations/{orgName}/replication/endpoint/{endpointID}` | Delete a data endpoint | [View](../operations/deleteDataEndpoint.md) |
+| PATCH | `/admin/v1/organizations/{orgName}/replication/endpoint/{endpointID}` | Update a data endpoint | [View](../operations/updateDataEndpoint.md) |
 | GET | `/admin/v1/checks` | List Data Checks | [View](../operations/listAdminDataChecks.md) |
 | POST | `/admin/v1/organizations/{orgName}/checks` | Create a data check | [View](../operations/createAdminDataCheck.md) |
 | GET | `/admin/v1/organizations/{orgName}/checks/{checkID}` | Get Data Check | [View](../operations/getDataCheck.md) |

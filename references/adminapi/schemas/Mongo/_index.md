@@ -1,12 +1,23 @@
 # Mongo Schemas
 
-35 schemas in this group.
+46 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [MongoDatabaseInfo](MongoDatabaseInfo.md) | object |  |
+| [MongoRBACPasswordChange](MongoRBACPasswordChange.md) | object |  |
+| [MongoRBACRoleRef](MongoRBACRoleRef.md) | object |  |
+| [MongoRBACResource](MongoRBACResource.md) | object | Native MongoDB resource. cluster:true is system op |
+| [MongoRBACPrivilege](MongoRBACPrivilege.md) | object |  |
+| [MongoRBACUser](MongoRBACUser.md) | object |  |
+| [MongoRBACUserCreate](MongoRBACUserCreate.md) | object |  |
 | [MongoCollectionCapabilities](MongoCollectionCapabilities.md) | object |  |
 | [MongoCollectionInfo](MongoCollectionInfo.md) | object |  |
+| [MongoRBACResourceCapability](MongoRBACResourceCapability.md) | object |  |
+| [MongoRBACCapabilities](MongoRBACCapabilities.md) | object |  |
+| [MongoRBACRole](MongoRBACRole.md) | object |  |
+| [MongoRBACRoleWrite](MongoRBACRoleWrite.md) | object |  |
+| [MongoRBACBindingChange](MongoRBACBindingChange.md) | object |  |
+| [MongoDatabaseInfo](MongoDatabaseInfo.md) | object |  |
 | [MongoCollectionStats](MongoCollectionStats.md) | object |  |
 | [MongoCreateCollectionOptions](MongoCreateCollectionOptions.md) | object |  |
 | [MongoCreateCollectionRequest](MongoCreateCollectionRequest.md) | object |  |

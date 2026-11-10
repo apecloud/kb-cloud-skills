@@ -6,6 +6,7 @@
 |--------|------|---------|----------|
 | GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/computeGroups` | List compute groups | [View](../operations/listComputeGroups.md) |
 | POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/computeGroups` | Create compute group | [View](../operations/createComputeGroup.md) |
+| POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/computeGroups/enable` | Enable a compute group on an existing component | [View](../operations/enableComputeGroup.md) |
 | GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/computeGroups/{groupName}` | Get compute group | [View](../operations/getComputeGroup.md) |
 | DELETE | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/computeGroups/{groupName}` | Delete compute group | [View](../operations/deleteComputeGroup.md) |
 | POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/computeGroups/{groupName}/scale` | Scale compute group | [View](../operations/scaleComputeGroup.md) |

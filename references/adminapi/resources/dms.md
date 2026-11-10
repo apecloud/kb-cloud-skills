@@ -13,8 +13,6 @@
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/query` | create a SQL query | [View](../operations/query.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/export` | Data Export | [View](../operations/DataExport.md) |
 | POST | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/import` | Data Import | [View](../operations/DataImport.md) |
-| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/task` | Get the task progress | [View](../operations/GetTaskProgress.md) |
-| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/tasks` | Get the task list | [View](../operations/GetTaskList.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/databases` | list all databases of the datasource | [View](../operations/listDmsDatabases.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/schemas` | list all databases or schema of the cluster | [View](../operations/getSchemaList.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/{schema}` | list the type and number of database objects in the specified database or schema | [View](../operations/ListObjectTypesInSchema.md) |

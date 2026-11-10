@@ -8,7 +8,7 @@
 
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
-| `engineName` | path | string | Yes | Supported engine name (doris or selectdb). |
+| `engineName` | path | string | Yes | Engine name. |
 | `orgName` | path | string | Yes |  |
 | `clusterName` | path | string | Yes |  |
 | `groupName` | path | string | Yes |  |

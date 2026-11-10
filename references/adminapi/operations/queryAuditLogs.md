@@ -17,6 +17,8 @@ Query audit logs of a cluster
 | `limit` | query | string | No |  |
 | `componentName` | query | string | No |  |
 | `instanceName` | query | string | No |  |
+| `query` | query | string | No |  |
+| `filename` | query | string | No |  |
 | `sortType` | query | sortType | No |  |
 
 ## Responses

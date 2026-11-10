@@ -6,6 +6,9 @@ Environment APIs
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/admin/v1/environments/{environmentName}/logs/retention` | Get environment log retention | [View](../operations/getEnvironmentLogRetention.md) |
+| PUT | `/admin/v1/environments/{environmentName}/logs/retention` | Set environment log retention | [View](../operations/putEnvironmentLogRetention.md) |
+| DELETE | `/admin/v1/environments/{environmentName}/logs/retention` | Reset environment log retention | [View](../operations/deleteEnvironmentLogRetention.md) |
 | POST | `/admin/v1/kubernetes/nodes` | List Kubernetes nodes | [View](../operations/listKubernetesNode.md) |
 | POST | `/admin/v1/kubernetes/storageclasses` | List Kubernetes storageclass | [View](../operations/listKubernetesStorageClass.md) |
 | POST | `/admin/v1/kubernetes/dns` | Get Kubernetes DNS | [View](../operations/getKubernetesDNS.md) |

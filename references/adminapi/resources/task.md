@@ -13,5 +13,8 @@ Task APIs
 | PATCH | `/admin/v1/tasks/{taskId}/stop` | Stop a task | [View](../operations/stopTask.md) |
 | PATCH | `/admin/v1/tasks/{taskId}/retry` | Retry a task | [View](../operations/retryTask.md) |
 | POST | `/admin/v1/tasks/{taskId}/cancel` | Cancel a task | [View](../operations/cancelTask.md) |
+| POST | `/admin/v1/tasks/{taskId}/abort` | Force abort a task | [View](../operations/abortTask.md) |
 | GET | `/admin/v1/tasks/{taskId}/log` | Get task log | [View](../operations/getTaskLog.md) |
 | GET | `/admin/v1/tasks/{taskId}/steps/{stepId}/log` | Get task step log | [View](../operations/getTaskStepLog.md) |
+| GET | `/admin/v1/scheduled-tasks` | List scheduled tasks | [View](../operations/listScheduledTasks.md) |
+| GET | `/admin/v1/scheduled-tasks/{scheduledTaskId}` | Get scheduled task | [View](../operations/getScheduledTask.md) |

@@ -6,6 +6,7 @@
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `conversionStrategy` | [selectedObjectConversionStrategy](selectedObjectConversionStrategy.md) | No |  |
 | `tree` | object | No |  |
 | `convertToParameters` | object[] | No | Parameters for specifying which objects to include in the selective backup |
 
@@ -16,7 +17,7 @@
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `switchWithDatabase` | boolean | No | if set to true, the tree will switch when database is switched. This is used for database-level backup, and the root level of the tree is database. If not set or set to false, the tree will not switch when database is switched, and the root level of the tree is instance. |
-| `sql` | string | Yes | The SQL query to retrieve the object tree |
+| `sql` | string | Yes | The engine-native query returning the columns used to build the object tree. |
 | `levelOrder` | object[] | Yes | The order of object types in the hierarchy |
 
 #### `tree.levelOrder`

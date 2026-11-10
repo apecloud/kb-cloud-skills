@@ -6,6 +6,9 @@ Cluster Log APIs
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/logs/retention` | Get cluster log retention | [View](../operations/getClusterLogRetention.md) |
+| PUT | `/api/v1/organizations/{orgName}/clusters/{clusterName}/logs/retention` | Set cluster log retention | [View](../operations/putClusterLogRetention.md) |
+| DELETE | `/api/v1/organizations/{orgName}/clusters/{clusterName}/logs/retention` | Reset cluster log retention | [View](../operations/deleteClusterLogRetention.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/logs/running` | Query cluster running logs | [View](../operations/queryRunningLogs.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/logs/slow` | Query cluster slow logs | [View](../operations/querySlowLogs.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/logs/slow/explain` | Explain cluster slow log SQL | [View](../operations/explainSlowLog.md) |

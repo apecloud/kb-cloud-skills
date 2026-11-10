@@ -16,6 +16,7 @@ Backup APIs
 | DELETE | `/api/v1/organizations/{orgName}/clusters/{clusterName}/backupSchedules/{scheduleName}` | Delete backup schedule | [View](../operations/deleteBackupSchedule.md) |
 | PATCH | `/api/v1/organizations/{orgName}/clusters/{clusterName}/backupSchedules/{scheduleName}` | Update backup schedule | [View](../operations/updateBackupSchedule.md) |
 | GET | `/api/v1/organizations/{orgName}/backups` | List backups | [View](../operations/listBackups.md) |
+| POST | `/api/v1/organizations/{orgName}/backups/batch-delete` | Batch delete backups | [View](../operations/batchDeleteBackups.md) |
 | GET | `/api/v1/organizations/{orgName}/backupStats` | Get backup statistics | [View](../operations/getBackupStats.md) |
 | GET | `/api/v1/organizations/{orgName}/backups/{backupId}` | Get backup | [View](../operations/getBackup.md) |
 | DELETE | `/api/v1/organizations/{orgName}/backups/{backupId}` | Delete backup | [View](../operations/deleteBackup.md) |

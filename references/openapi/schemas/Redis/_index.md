@@ -1,9 +1,11 @@
 # Redis Schemas
 
-40 schemas in this group.
+42 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
+| [RedisKeyEntry](RedisKeyEntry.md) | object |  |
+| [RedisKeyAnalysisReport](RedisKeyAnalysisReport.md) | object | One Redis keys analysis report row. Rows are persi |
 | [RedisACLContext](RedisACLContext.md) | object |  |
 | [RedisCapability](RedisCapability.md) | object |  |
 | [RedisDataCapabilities](RedisDataCapabilities.md) | object |  |

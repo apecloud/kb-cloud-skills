@@ -4,6 +4,9 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/retention` | Get cluster log retention | [View](../operations/getClusterLogRetention.md) |
+| PUT | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/retention` | Set cluster log retention | [View](../operations/putClusterLogRetention.md) |
+| DELETE | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/retention` | Reset cluster log retention | [View](../operations/deleteClusterLogRetention.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/pod` | Query cluster pod logs | [View](../operations/queryPodLogs.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/running` | Query cluster running logs | [View](../operations/queryRunningLogs.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/logs/slow` | Query cluster slow logs | [View](../operations/querySlowLogs.md) |

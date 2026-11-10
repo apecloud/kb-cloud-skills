@@ -8,6 +8,9 @@ If present, it must be set defaultMethod and fullMethod
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `modes` | string[] | No | Engine modes that support backup and restore. Omitted or null means all modes
+(legacy behavior); an empty array disables backup and restore for all modes.
+ |
 | `defaultMethod` | string | Yes |  |
 | `defaultComponent` | string | No | If set, the default backup method will be applied to the specified component.
 If not set, the default backup method will be applied to all components.

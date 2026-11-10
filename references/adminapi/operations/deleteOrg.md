@@ -11,6 +11,7 @@ partially delete the specified org
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
 | `orgName` | path | string | Yes | name of the Org |
+| `orgID` | query | string | Yes |  |
 
 ## Responses
 

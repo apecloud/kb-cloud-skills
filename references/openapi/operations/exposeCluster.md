@@ -1,7 +1,7 @@
 # POST /api/v1/organizations/{orgName}/clusters/{clusterName}/expose
 
 **Resource:** [opsrequest](../resources/opsrequest.md)
-**Expose cluster loadbalancer endpoint**
+**Expose cluster endpoint**
 **Operation ID:** `exposeCluster`
 
 ## Parameters

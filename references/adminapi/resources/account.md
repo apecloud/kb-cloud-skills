@@ -4,6 +4,41 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts` | InfluxDB ListUsers | [View](../operations/influxDBListUsers.md) |
+| POST | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts` | InfluxDB CreateUser | [View](../operations/influxDBCreateUser.md) |
+| DELETE | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}` | InfluxDB DeleteUser | [View](../operations/influxDBDeleteUser.md) |
+| PATCH | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/password` | InfluxDB ChangePassword | [View](../operations/influxDBChangePassword.md) |
+| GET | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/organizations` | InfluxDB ListOrganizations | [View](../operations/influxDBListOrganizations.md) |
+| GET | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/buckets` | InfluxDB ListBuckets | [View](../operations/influxDBListBuckets.md) |
+| GET | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens` | InfluxDB ListTokens | [View](../operations/influxDBListTokens.md) |
+| POST | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens` | InfluxDB CreateToken | [View](../operations/influxDBCreateToken.md) |
+| DELETE | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens/{tokenID}` | InfluxDB DeleteToken | [View](../operations/influxDBDeleteToken.md) |
+| PATCH | `/admin/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens/{tokenID}` | InfluxDB UpdateToken | [View](../operations/influxDBUpdateToken.md) |
+| GET | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts` | DolphinDB ListUsers | [View](../operations/dolphinDBListUsers.md) |
+| POST | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts` | DolphinDB CreateUser | [View](../operations/dolphinDBCreateUser.md) |
+| DELETE | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | DolphinDB DeleteUser | [View](../operations/dolphinDBDeleteUser.md) |
+| PATCH | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/password` | DolphinDB ChangePassword | [View](../operations/dolphinDBChangePassword.md) |
+| GET | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups` | DolphinDB ListGroups | [View](../operations/dolphinDBListGroups.md) |
+| POST | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups` | DolphinDB CreateGroup | [View](../operations/dolphinDBCreateGroup.md) |
+| DELETE | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups/{groupName}` | DolphinDB DeleteGroup | [View](../operations/dolphinDBDeleteGroup.md) |
+| PATCH | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups/{groupName}/members` | DolphinDB ChangeGroupMembers | [View](../operations/dolphinDBChangeGroupMembers.md) |
+| GET | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/privileges/capabilities` | DolphinDB GetCapabilities | [View](../operations/dolphinDBGetCapabilities.md) |
+| GET | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/privileges/{subjectType}/{subjectName}` | DolphinDB GetPermissions | [View](../operations/dolphinDBGetPermissions.md) |
+| PATCH | `/admin/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/privileges/{subjectType}/{subjectName}` | DolphinDB ChangePermissions | [View](../operations/dolphinDBChangePermissions.md) |
+| PUT | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}/password` | ChangeRBACUserPassword | [View](../operations/mongoChangeRBACUserPassword.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users` | ListRBACUsers | [View](../operations/mongoListRBACUsers.md) |
+| POST | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users` | CreateRBACUser | [View](../operations/mongoCreateRBACUser.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/databases` | List MongoDB cluster databases | [View](../operations/mongoListClusterDatabases.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/databases/{database}/collections` | List MongoDB cluster database objects | [View](../operations/mongoListClusterCollections.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/capabilities` | GetRBACCapabilities | [View](../operations/mongoGetRBACCapabilities.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles` | ListRBACRoles | [View](../operations/mongoListRBACRoles.md) |
+| POST | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles` | CreateRBACRole | [View](../operations/mongoCreateRBACRole.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles/{database}/{roleName}` | GetRBACRole | [View](../operations/mongoGetRBACRole.md) |
+| PUT | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles/{database}/{roleName}` | UpdateRBACRole | [View](../operations/mongoUpdateRBACRole.md) |
+| DELETE | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles/{database}/{roleName}` | DeleteRBACRole | [View](../operations/mongoDeleteRBACRole.md) |
+| GET | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}` | GetRBACUser | [View](../operations/mongoGetRBACUser.md) |
+| DELETE | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}` | DeleteRBACUser | [View](../operations/mongoDeleteRBACUser.md) |
+| PATCH | `/admin/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}/roles` | ChangeRBACUserRoles | [View](../operations/mongoChangeRBACUserRoles.md) |
 | GET | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts` | List cluster accounts | [View](../operations/listKafkaAccounts.md) |
 | POST | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts` | Create cluster account | [View](../operations/createKafkaAccount.md) |
 | DELETE | `/admin/v1/data/kafka/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete cluster account | [View](../operations/deleteKafkaAccount.md) |
@@ -39,6 +74,14 @@
 | DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Delete MinIO access key | [View](../operations/deleteServiceAccount.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/access-keys/{accessKey}` | Update MinIO access key | [View](../operations/updateServiceAccount.md) |
 | GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/root-password` | get root account password | [View](../operations/getRootAccountPassword.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges` | Inspect native object and column privileges | [View](../operations/getAccountObjectPrivileges.md) |
+| PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges` | Grant or revoke native object and column privileges | [View](../operations/changeAccountObjectPrivileges.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/capabilities` | List native object privilege capabilities for the connected server | [View](../operations/getAccountObjectPrivilegeCapabilities.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/overview` | Read native account privilege summary or selected database evidence | [View](../operations/getAccountPrivilegeOverview.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/reset` | Preview clearing explicit account privileges | [View](../operations/previewAccountPrivilegeReset.md) |
+| DELETE | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/reset` | Clear explicit account privileges | [View](../operations/resetAccountPrivileges.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/columns` | List exact column names for account object privileges | [View](../operations/listAccountObjectPrivilegeColumns.md) |
+| GET | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/objects` | Discover existing native privilege objects with stable routine identities | [View](../operations/listAccountObjectPrivilegeObjects.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/privileges` | update account privileges | [View](../operations/updateAccountPrivileges.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/lock` | Lock cluster account | [View](../operations/lockAccount.md) |
 | PATCH | `/admin/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/unlock` | Unlock cluster account | [View](../operations/unlockAccount.md) |

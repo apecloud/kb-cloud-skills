@@ -17,7 +17,7 @@ Cluster Ops APIs
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/vscale` | Vertical scale cluster | [View](../operations/verticalScaleCluster.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/hscale` | Horizontal scale cluster | [View](../operations/horizontalScaleCluster.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/promote` | Promote cluster intance to primary | [View](../operations/promoteCluster.md) |
-| POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/expose` | Expose cluster loadbalancer endpoint | [View](../operations/exposeCluster.md) |
+| POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/expose` | Expose cluster endpoint | [View](../operations/exposeCluster.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/updateLicense` | Update the cluster license | [View](../operations/updateClusterLicense.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/custom-ops` | Create custom OpsRequest | [View](../operations/customOps.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/volumes/io-quotas` | Specify IOPS and BPS of cluster volumes | [View](../operations/specifyClusterIOQuotas.md) |

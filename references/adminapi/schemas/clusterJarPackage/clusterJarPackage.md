@@ -14,7 +14,6 @@
 | `size` | integer (int64) | Yes |  |
 | `uri` | string | Yes |  |
 | `published` | boolean | Yes |  |
-| `archived` | boolean | Yes |  |
 | `status` | string | Yes |  |
 | `synced` | integer (int64) | Yes |  |
 | `total` | integer (int64) | Yes |  |

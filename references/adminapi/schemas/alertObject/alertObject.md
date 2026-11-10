@@ -13,6 +13,8 @@ Alert object information
 | `groupName` | string | No |  |
 | `expr` | string | No |  |
 | `clusterName` | string | No |  |
+| `objectType` | [objectTypeEnum](objectTypeEnum.md) | No |  |
+| `objectID` | string | No |  |
 | `objectName` | string | No |  |
 | `engine` | string | No |  |
 | `namespace` | string | No |  |

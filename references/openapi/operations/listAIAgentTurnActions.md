@@ -11,8 +11,8 @@
 | `orgName` | path | string | Yes |  |
 | `conversationId` | path | string | Yes |  |
 | `turnId` | query | string | No |  |
-| `after` | query | string | No |  |
-| `limit` | query | integer | No |  |
+| `after` | query | string | No | Raw action cursor from the preceding response's nextCursor. |
+| `limit` | query | integer | No | Raw action page budget. The last turn is read in full before coalescing; use hasMore and nextCursor rather than the returned item count. |
 
 ## Responses
 

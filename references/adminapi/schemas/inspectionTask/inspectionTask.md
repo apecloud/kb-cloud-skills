@@ -19,8 +19,8 @@
 | `isAuto` | boolean | No |  |
 | `savedDays` | integer | No |  |
 | `expiredAt` | string (date-time) | No | Expiration timestamp fixed when the inspection report is created from savedDays. |
-| `score` | integer (int64) | No | Weighted health score from 0 to 100 over evaluable inspection items only. Unknown results and items with info importance are excluded from both the numerator and denominator. The field is omitted when no item is evaluable; a present value of 0 is a valid evaluated score. |
-| `result` | string | No | Task health conclusion derived from evaluable item states and criticality-aware score caps. Valid conclusions are red, yellow, green, and unknown. Unknown means no item is evaluable. Unknown items remain visible in the item list but do not override a red, yellow, or green conclusion derived from evaluable items. |
+| `score` | integer (int64) | No | Weighted health score from 0 to 100 over evaluable inspection items only. Unknown results and items with info importance are excluded from both the numerator and denominator. The field is omitted when no item is evaluable. Doris and SelectDB also omit it when risk-check evidence is unavailable, and score correlated findings once per failure family. A present value of 0 is a valid evaluated score. |
+| `result` | string | No | Task health conclusion derived from evaluable item states and criticality-aware score caps. Valid conclusions are red, yellow, green, and unknown. Unknown means no item is evaluable, or a Doris/SelectDB inspection has unavailable risk-check evidence without an observed red or yellow finding. Unavailable evidence never hides an observed red or yellow finding. |
 | `latestRunAt` | string (date-time) | No | Last inspection execution timestamp used for freshness checks. |
 | `expectedInterval` | string | No | Expected first-version inspection interval assumption, for example 1h. |
 | `nextRunAt` | string (date-time) | No | Expected next inspection time derived from latestRunAt and expectedInterval. |

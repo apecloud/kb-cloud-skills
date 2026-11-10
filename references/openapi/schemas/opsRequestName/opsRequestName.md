@@ -9,6 +9,5 @@ OpsRequestName is the name of a KubeBlocks OpsRequest response
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `opsRequestName` | string | No |  |
-| `clusterTaskId` | string | No |  |
 | `taskId` | string | Yes |  |
 

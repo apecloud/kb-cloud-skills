@@ -4,4 +4,4 @@
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [alertCluster](alertCluster.md) | object |  |
+| [alertCluster](alertCluster.md) | object | Resource-scoped alert settings, shared by cluster  |

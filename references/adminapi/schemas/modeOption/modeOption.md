@@ -6,6 +6,7 @@
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `placementScope` | [placementScope](placementScope.md) | No |  |
 | `name` | string | Yes |  |
 | `title` | [localizedDescription](localizedDescription.md) | Yes |  |
 | `description` | [localizedDescription](localizedDescription.md) | Yes |  |

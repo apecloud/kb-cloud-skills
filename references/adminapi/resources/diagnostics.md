@@ -21,6 +21,7 @@ Diagnostics APIs
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/mysql/sqlAnalysis` | Get MySQL SQL analysis | [View](../operations/getDiagnosticsMysqlSQLAnalysis.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/postgresql/performanceTrends` | Get PostgreSQL performance trends | [View](../operations/getDiagnosticsPostgresqlPerformanceTrends.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/mysql/performanceTrends` | Get MySQL performance trends | [View](../operations/getDiagnosticsMysqlPerformanceTrends.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/mongodb/performanceTrends` | Get MongoDB performance trends | [View](../operations/getDiagnosticsMongoDBPerformanceTrends.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/elasticsearch/taskAnalysis` | Get Elasticsearch task and hot-thread analysis | [View](../operations/getDiagnosticsElasticsearchTaskAnalysis.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/elasticsearch/storageAnalysis` | Get Elasticsearch storage and index analysis | [View](../operations/getDiagnosticsElasticsearchStorageAnalysis.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/elasticsearch/shards` | List Elasticsearch shards | [View](../operations/listDiagnosticsElasticsearchShards.md) |
@@ -33,6 +34,12 @@ Diagnostics APIs
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/dameng/sessions/{sessionId}/lockAnalysis` | Get Dameng session lock analysis | [View](../operations/getDiagnosticsDamengSessionLockAnalysis.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/dameng/sessions/{sessionId}` | Get Dameng session detail | [View](../operations/getDiagnosticsDamengSession.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/dameng/sessions` | List Dameng sessions | [View](../operations/listDiagnosticsDamengSessions.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/kingbase/performanceTrends` | Get Kingbase performance trends | [View](../operations/getDiagnosticsKingbasePerformanceTrends.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/kingbase/sessions` | List Kingbase session diagnostics | [View](../operations/listDiagnosticsKingbaseSessions.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/kingbase/sessions/{pid}/lockAnalysis` | Get Kingbase session lock analysis | [View](../operations/getDiagnosticsKingbaseSessionLockAnalysis.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/kingbase/sessions/{pid}` | Get Kingbase session diagnostics | [View](../operations/getDiagnosticsKingbaseSession.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/clickhouse/sessions` | List active ClickHouse queries | [View](../operations/listDiagnosticsClickhouseSessions.md) |
+| DELETE | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/clickhouse/sessions/{queryId}` | Kill a ClickHouse query | [View](../operations/killDiagnosticsClickhouseQuery.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/clickhouse/sqlAnalysis` | Get ClickHouse SQL analysis | [View](../operations/getDiagnosticsClickhouseSQLAnalysis.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/clickhouse/spaceAnalysis` | Get ClickHouse space analysis | [View](../operations/getDiagnosticsClickhouseSpaceAnalysis.md) |
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/diagnostics/clickhouse/clusterHealth` | Get ClickHouse replica and cluster health | [View](../operations/getDiagnosticsClickhouseClusterHealth.md) |

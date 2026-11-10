@@ -13,3 +13,4 @@ Current status of the task
 - `Failed`
 - `Cancelling`
 - `Cancelled`
+- `Aborted`

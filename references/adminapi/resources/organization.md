@@ -8,6 +8,9 @@ Organization APIs
 |--------|------|---------|----------|
 | GET | `/admin/v1/organizations` | Get organization list | [View](../operations/listOrganizations.md) |
 | POST | `/admin/v1/organizations` | Create organization | [View](../operations/createOrg.md) |
+| GET | `/admin/v1/organizations/{orgName}/deletionPreview` | Preview organization deletion or purge | [View](../operations/previewOrgDeletion.md) |
+| POST | `/admin/v1/organizations/{orgName}/restoreOrganization` | Restore organization | [View](../operations/restoreOrg.md) |
+| POST | `/admin/v1/organizations/{orgName}/purge` | Purge organization | [View](../operations/purgeOrg.md) |
 | GET | `/admin/v1/organizations/{orgName}` | Get organization | [View](../operations/readOrg.md) |
 | DELETE | `/admin/v1/organizations/{orgName}` | Delete organization | [View](../operations/deleteOrg.md) |
 | PATCH | `/admin/v1/organizations/{orgName}` | Update organization | [View](../operations/patchOrg.md) |

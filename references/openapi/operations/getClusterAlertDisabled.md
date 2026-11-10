@@ -1,7 +1,7 @@
 # GET /api/v1/organizations/{orgName}/alerts/cluster/{clusterName}
 
 **Resource:** [clusterAlertSwitch](../resources/clusterAlertSwitch.md)
-**Check if cluster alert is disabled**
+**Get cluster alert settings**
 **Operation ID:** `getClusterAlertDisabled`
 
 ## Parameters

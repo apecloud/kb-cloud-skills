@@ -4,4 +4,4 @@
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [dataChannelEndpointCreate](dataChannelEndpointCreate.md) | object |  |
+| [dataChannelEndpointCreate](dataChannelEndpointCreate.md) | object | Use endpointType custom or kubeblocks with the cor |

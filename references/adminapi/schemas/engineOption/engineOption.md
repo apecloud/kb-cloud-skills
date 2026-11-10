@@ -58,6 +58,9 @@ The value should match one of the mode names defined in the modes array.
 | `required` | boolean | No | Indicate whether the current cluster requires users to input the license |
 | `secretName` | string | Yes | support to refer the cluster name with variable ${clusterName} |
 | `fileName` | string | No | the license file name |
+| `allowedTypes` | string[] | No | Allowed engine license types. Omit to retain unrestricted license types. |
+| `versions` | string[] | No | Engine versions that support license installation. Entries match an exact service version or its major version according to the main component version rule. Omit or leave empty for unrestricted versions. |
+| `networkModes` | networkMode[] | No | Effective cluster network modes that support license installation. Omit or leave empty for unrestricted network modes. |
 | `files` | engineOptionLicenseFile[] | No | Explicit license file upload slots. Each item maps one UI upload field to the file name written into the license Secret. |
 | `components` | licenseOption[] | No | set the custom ops to update license for different components |
 

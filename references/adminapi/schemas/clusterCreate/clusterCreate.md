@@ -30,6 +30,7 @@ KubeBlocks cluster information
 | `displayName` | string | No | Display name of cluster. |
 | `static` | boolean | No | if cluster is static cluster |
 | `networkMode` | [networkMode](networkMode.md) | No |  |
+| `vipPoolName` | string | No | Name of the VIP Pool (VIP Pool poolName) used as the MetalLB address pool for LoadBalancer services. Only effective when networkMode is LoadBalancer. |
 | `serviceRefs` | serviceRef[] | No |  |
 | `objectStorageConfig` | [clusterObjectStorageConfig](clusterObjectStorageConfig.md) | No |  |
 | `maintainceWindow` | [clusterMaintainceWindow](clusterMaintainceWindow.md) | No |  |

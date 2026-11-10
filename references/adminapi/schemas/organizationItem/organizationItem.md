@@ -8,6 +8,11 @@ Organization items.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `id` | string | Yes |  |
+| `status` | [orgStatus](orgStatus.md) | Yes |  |
+| `expiredAt` | string (date-time) | Yes |  |
+| `purgeError` | string | No |  |
+| `allowedActions` | string[] | Yes |  |
 | `name` | string | Yes | The name of the organization. |
 | `displayName` | string | Yes | The display name of the organization. |
 | `creator` | string | No | The display name of the creator of the organization. |

@@ -15,6 +15,7 @@
 | PATCH | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/backupSchedules/{scheduleName}` | Update backup schedule | [View](../operations/updateBackupSchedule.md) |
 | GET | `/admin/v1/backups` | List backups | [View](../operations/listBackups.md) |
 | GET | `/admin/v1/backupStats` | Get backup statistics | [View](../operations/getBackupStats.md) |
+| POST | `/admin/v1/organizations/{orgName}/backups/batch-delete` | Batch delete backups | [View](../operations/batchDeleteBackups.md) |
 | GET | `/admin/v1/organizations/{orgName}/backups/{backupId}` | Get backup | [View](../operations/getBackup.md) |
 | DELETE | `/admin/v1/organizations/{orgName}/backups/{backupId}` | Delete backup | [View](../operations/deleteBackup.md) |
 | GET | `/admin/v1/organizations/{orgName}/backups/{backupId}/logs` | Get backup log | [View](../operations/getBackupLog.md) |

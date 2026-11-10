@@ -10,7 +10,7 @@
 |------|------|------|----------|-------------|
 | `orgName` | path | string | Yes | name of the org |
 | `clusterName` | path | string | Yes | name of the cluster |
-| `database` | query | string | No | database name |
+| `database` | query | string | No | Database name for engines configured to switch the object tree by database. |
 
 ## Responses
 

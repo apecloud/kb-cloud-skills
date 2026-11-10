@@ -24,7 +24,7 @@ If not set, use default value.
 | `delete` | boolean | Yes |  |
 | `supportLock` | boolean | No | Whether the engine supports account lock and unlock actions. |
 | `supportServiceAccount` | boolean | No | Whether the engine supports service account access-key management. |
-| `protectedAccounts` | string[] | No | Account names that are protected from update, delete, lock, and unlock actions. |
+| `protectedAccounts` | string[] | No | Account names that cannot be deleted, locked, or unlocked. This does not hide accounts or restrict password or privilege actions. |
 | `displayRootAccount` | boolean | No |  |
 | `resetRootPassword` | boolean | No |  |
 | `supportMultipleComponent` | boolean | No |  |

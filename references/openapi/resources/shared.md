@@ -4,6 +4,49 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts` | InfluxDB ListUsers | [View](../operations/influxDBListUsers.md) |
+| POST | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts` | InfluxDB CreateUser | [View](../operations/influxDBCreateUser.md) |
+| DELETE | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}` | InfluxDB DeleteUser | [View](../operations/influxDBDeleteUser.md) |
+| PATCH | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/password` | InfluxDB ChangePassword | [View](../operations/influxDBChangePassword.md) |
+| GET | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/organizations` | InfluxDB ListOrganizations | [View](../operations/influxDBListOrganizations.md) |
+| GET | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/buckets` | InfluxDB ListBuckets | [View](../operations/influxDBListBuckets.md) |
+| POST | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/buckets` | InfluxDB CreateBucket | [View](../operations/influxDBCreateBucket.md) |
+| GET | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/buckets/{bucketID}` | InfluxDB GetBucket | [View](../operations/influxDBGetBucket.md) |
+| DELETE | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/buckets/{bucketID}` | InfluxDB DeleteBucket | [View](../operations/influxDBDeleteBucket.md) |
+| PATCH | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/buckets/{bucketID}` | InfluxDB UpdateBucket | [View](../operations/influxDBUpdateBucket.md) |
+| GET | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens` | InfluxDB ListTokens | [View](../operations/influxDBListTokens.md) |
+| POST | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens` | InfluxDB CreateToken | [View](../operations/influxDBCreateToken.md) |
+| DELETE | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens/{tokenID}` | InfluxDB DeleteToken | [View](../operations/influxDBDeleteToken.md) |
+| PATCH | `/api/v1/data/influxdb/organizations/{orgName}/clusters/{clusterName}/accounts/{userID}/tokens/{tokenID}` | InfluxDB UpdateToken | [View](../operations/influxDBUpdateToken.md) |
+| POST | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/rebalance/drain-preview` | Preview DolphinDB data node evacuation | [View](../operations/dolphinDBPreviewDrain.md) |
+| GET | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/rebalance/preview` | DolphinDB PreviewRebalance | [View](../operations/dolphinDBPreviewRebalance.md) |
+| GET | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/distribution` | DolphinDB GetDistribution | [View](../operations/dolphinDBGetDistribution.md) |
+| POST | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/rebalance/operations` | DolphinDB CreateRebalance | [View](../operations/dolphinDBCreateRebalance.md) |
+| GET | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts` | DolphinDB ListUsers | [View](../operations/dolphinDBListUsers.md) |
+| POST | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts` | DolphinDB CreateUser | [View](../operations/dolphinDBCreateUser.md) |
+| DELETE | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | DolphinDB DeleteUser | [View](../operations/dolphinDBDeleteUser.md) |
+| PATCH | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/password` | DolphinDB ChangePassword | [View](../operations/dolphinDBChangePassword.md) |
+| GET | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups` | DolphinDB ListGroups | [View](../operations/dolphinDBListGroups.md) |
+| POST | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups` | DolphinDB CreateGroup | [View](../operations/dolphinDBCreateGroup.md) |
+| DELETE | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups/{groupName}` | DolphinDB DeleteGroup | [View](../operations/dolphinDBDeleteGroup.md) |
+| PATCH | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/groups/{groupName}/members` | DolphinDB ChangeGroupMembers | [View](../operations/dolphinDBChangeGroupMembers.md) |
+| GET | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/privileges/capabilities` | DolphinDB GetCapabilities | [View](../operations/dolphinDBGetCapabilities.md) |
+| GET | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/privileges/{subjectType}/{subjectName}` | DolphinDB GetPermissions | [View](../operations/dolphinDBGetPermissions.md) |
+| PATCH | `/api/v1/data/dolphindb/organizations/{orgName}/clusters/{clusterName}/privileges/{subjectType}/{subjectName}` | DolphinDB ChangePermissions | [View](../operations/dolphinDBChangePermissions.md) |
+| PUT | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}/password` | ChangeRBACUserPassword | [View](../operations/mongoChangeRBACUserPassword.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users` | ListRBACUsers | [View](../operations/mongoListRBACUsers.md) |
+| POST | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users` | CreateRBACUser | [View](../operations/mongoCreateRBACUser.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/databases` | List MongoDB cluster databases | [View](../operations/mongoListClusterDatabases.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/databases/{database}/collections` | List MongoDB cluster database objects | [View](../operations/mongoListClusterCollections.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/capabilities` | GetRBACCapabilities | [View](../operations/mongoGetRBACCapabilities.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles` | ListRBACRoles | [View](../operations/mongoListRBACRoles.md) |
+| POST | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles` | CreateRBACRole | [View](../operations/mongoCreateRBACRole.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles/{database}/{roleName}` | GetRBACRole | [View](../operations/mongoGetRBACRole.md) |
+| PUT | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles/{database}/{roleName}` | UpdateRBACRole | [View](../operations/mongoUpdateRBACRole.md) |
+| DELETE | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/roles/{database}/{roleName}` | DeleteRBACRole | [View](../operations/mongoDeleteRBACRole.md) |
+| GET | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}` | GetRBACUser | [View](../operations/mongoGetRBACUser.md) |
+| DELETE | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}` | DeleteRBACUser | [View](../operations/mongoDeleteRBACUser.md) |
+| PATCH | `/api/v1/data/mongodb/organizations/{orgName}/clusters/{clusterName}/rbac/users/{database}/{username}/roles` | ChangeRBACUserRoles | [View](../operations/mongoChangeRBACUserRoles.md) |
 | GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/config` | Get external JAR capability and configuration | [View](../operations/getClusterJarConfig.md) |
 | GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars` | List external JAR versions with metadata and per-instance synchronization state | [View](../operations/listClusterJars.md) |
 | POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars` | Upload an immutable JAR version | [View](../operations/uploadClusterJar.md) |
@@ -11,11 +54,13 @@
 | GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/download` | Download the original JAR | [View](../operations/downloadClusterJar.md) |
 | POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/distribute` | Publish a JAR with optimistic manifest version checking | [View](../operations/distributeClusterJar.md) |
 | POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/retry` | Retry synchronization of published JARs | [View](../operations/retryClusterJar.md) |
-| POST | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/jars/{jarId}/archive` | Archive a JAR while retaining published files and startup synchronization | [View](../operations/archiveClusterJar.md) |
 | DELETE | `/api/v1/user/apikey/{keyName}` | Delete apikey | [View](../operations/deleteApikey.md) |
 | PATCH | `/api/v1/user/apikey/{keyName}` | Update apikey information | [View](../operations/patchAPIkey.md) |
 | GET | `/api/v1/user/apikeys` | Get apikeys of the authenticated user | [View](../operations/readUserApikeys.md) |
 | POST | `/api/v1/user/apikeys` | Create apikey of the authenticated user | [View](../operations/createUserApikey.md) |
+| GET | `/api/v1/organizations/{orgName}/deletionPreview` | Preview organization deletion or purge | [View](../operations/previewOrgDeletion.md) |
+| POST | `/api/v1/organizations/{orgName}/restoreOrganization` | Restore organization | [View](../operations/restoreOrg.md) |
+| POST | `/api/v1/organizations/{orgName}/purge` | Purge organization | [View](../operations/purgeOrg.md) |
 | GET | `/api/v1/organizations/{orgName}` | Get organization | [View](../operations/readOrg.md) |
 | DELETE | `/api/v1/organizations/{orgName}` | Delete organization | [View](../operations/deleteOrg.md) |
 | PATCH | `/api/v1/organizations/{orgName}` | Update organization | [View](../operations/patchOrg.md) |
@@ -81,11 +126,10 @@
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/vscale` | Vertical scale cluster | [View](../operations/verticalScaleCluster.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/hscale` | Horizontal scale cluster | [View](../operations/horizontalScaleCluster.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/promote` | Promote cluster intance to primary | [View](../operations/promoteCluster.md) |
-| POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/expose` | Expose cluster loadbalancer endpoint | [View](../operations/exposeCluster.md) |
+| POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/expose` | Expose cluster endpoint | [View](../operations/exposeCluster.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/updateLicense` | Update the cluster license | [View](../operations/updateClusterLicense.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/custom-ops` | Create custom OpsRequest | [View](../operations/customOps.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/volumes/io-quotas` | Specify IOPS and BPS of cluster volumes | [View](../operations/specifyClusterIOQuotas.md) |
-| GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/autohealing` | list autohealing job | [View](../operations/getAutohealing.md) |
 | GET | `/api/v1/organizations/{orgName}/clusterTags` | Get cluster tags | [View](../operations/getTags.md) |
 | DELETE | `/api/v1/organizations/{orgName}/tags/{tagId}` | Delete tag | [View](../operations/deleteTag.md) |
 | PATCH | `/api/v1/organizations/{orgName}/tags/{tagId}` |  | [View](../operations/updateTag.md) |
@@ -134,8 +178,12 @@
 | DELETE | `/api/v1/organizations/{orgName}/alerts/rules/{alertName}` | Delete alert rule | [View](../operations/deleteAlertRule.md) |
 | PATCH | `/api/v1/organizations/{orgName}/alerts/rules/{alertName}` | Update alert rule | [View](../operations/updateAlertRule.md) |
 | PATCH | `/api/v1/organizations/{orgName}/alerts/objects/{alertId}` | Set alert object status | [View](../operations/setAlertObjectStatus.md) |
-| GET | `/api/v1/organizations/{orgName}/alerts/cluster/{clusterName}` | Check if cluster alert is disabled | [View](../operations/getClusterAlertDisabled.md) |
-| PATCH | `/api/v1/organizations/{orgName}/alerts/cluster/{clusterName}` | Set cluster alert disabled or enabled | [View](../operations/setClusterAlertDisabled.md) |
+| GET | `/api/v1/organizations/{orgName}/alerts/cluster/{clusterName}/rules` | List applicable alert rules for a cluster | [View](../operations/listClusterAlertRules.md) |
+| GET | `/api/v1/organizations/{orgName}/alerts/cluster/{clusterName}` | Get cluster alert settings | [View](../operations/getClusterAlertDisabled.md) |
+| PATCH | `/api/v1/organizations/{orgName}/alerts/cluster/{clusterName}` | Update cluster alert settings | [View](../operations/setClusterAlertDisabled.md) |
+| GET | `/api/v1/organizations/{orgName}/alerts/resource/{resourceType}/{resourceID}/rules` | List applicable alert rules for a resource | [View](../operations/listResourceAlertRules.md) |
+| GET | `/api/v1/organizations/{orgName}/alerts/resource/{resourceType}/{resourceID}` | Get resource alert settings | [View](../operations/getResourceAlertDisabled.md) |
+| PATCH | `/api/v1/organizations/{orgName}/alerts/resource/{resourceType}/{resourceID}` | Update resource alert settings | [View](../operations/setResourceAlertDisabled.md) |
 | GET | `/api/v1/organizations/{orgName}/alerts/config` | Get alert config | [View](../operations/getAlertConfig.md) |
 | PATCH | `/api/v1/organizations/{orgName}/alerts/config` | Set alert config | [View](../operations/setAlertConfig.md) |
 | GET | `/api/v1/organizations/{orgName}/alerts/inhibits/{inhibitId}` | Get alert inhibit | [View](../operations/getAlertInhibit.md) |
@@ -152,8 +200,6 @@
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/query` | create a SQL query | [View](../operations/query.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/export` | Data Export | [View](../operations/DataExport.md) |
 | POST | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/import` | Data Import | [View](../operations/DataImport.md) |
-| GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/task` | Get the task progress | [View](../operations/GetTaskProgress.md) |
-| GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/tasks` | Get the task list | [View](../operations/GetTaskList.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/databases` | list all databases of the datasource | [View](../operations/listDmsDatabases.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/schemas` | list all databases or schema of the cluster | [View](../operations/getSchemaList.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}/{schema}` | list the type and number of database objects in the specified database or schema | [View](../operations/ListObjectTypesInSchema.md) |
@@ -282,6 +328,14 @@
 | DELETE | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | Delete cluster account | [View](../operations/deleteAccount.md) |
 | PATCH | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}` | update cluster account | [View](../operations/updateAccount.md) |
 | GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/root-password` | get root account password | [View](../operations/getRootAccountPassword.md) |
+| GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges` | Inspect native object and column privileges | [View](../operations/getAccountObjectPrivileges.md) |
+| PATCH | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges` | Grant or revoke native object and column privileges | [View](../operations/changeAccountObjectPrivileges.md) |
+| GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/capabilities` | List native object privilege capabilities for the connected server | [View](../operations/getAccountObjectPrivilegeCapabilities.md) |
+| GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/overview` | Read native account privilege summary or selected database evidence | [View](../operations/getAccountPrivilegeOverview.md) |
+| GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/reset` | Preview clearing explicit account privileges | [View](../operations/previewAccountPrivilegeReset.md) |
+| DELETE | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/reset` | Clear explicit account privileges | [View](../operations/resetAccountPrivileges.md) |
+| GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/columns` | List exact column names for account object privileges | [View](../operations/listAccountObjectPrivilegeColumns.md) |
+| GET | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/object-privileges/objects` | Discover existing native privilege objects with stable routine identities | [View](../operations/listAccountObjectPrivilegeObjects.md) |
 | PATCH | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/privileges` | update account privileges | [View](../operations/updateAccountPrivileges.md) |
 | PATCH | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/lock` | Lock cluster account | [View](../operations/lockAccount.md) |
 | PATCH | `/api/v1/data/{engineName}/organizations/{orgName}/clusters/{clusterName}/accounts/{accountName}/unlock` | Unlock cluster account | [View](../operations/unlockAccount.md) |

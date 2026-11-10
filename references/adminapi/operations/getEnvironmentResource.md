@@ -4,7 +4,7 @@
 **Get a live Kubernetes resource**
 **Operation ID:** `getEnvironmentResource`
 
-Returns one named Kubernetes object, excluding metadata.managedFields. The code allowlist currently permits only apiVersion v1 with kind PersistentVolumeClaim; other valid resource types return 403 before Kubernetes access. Requires Admin environment read permission. Does not support lists, subresources or writes.
+Returns one named Kubernetes object, excluding metadata.managedFields. The code allowlist permits v1 PersistentVolumeClaim, storage.k8s.io/v1 StorageClass and apelocal.csi.apecloud.com/v1alpha1 HostPathDefinition; other valid resource types return 403 before Kubernetes access. Requires Admin environment read permission. Does not support lists, subresources or writes.
 
 ## Parameters
 
@@ -12,8 +12,8 @@ Returns one named Kubernetes object, excluding metadata.managedFields. The code 
 |------|------|------|----------|-------------|
 | `environmentName` | path | string | Yes |  |
 | `resourceName` | path | string | Yes |  |
-| `apiVersion` | query | string | Yes | Kubernetes API version. Currently only v1 with kind PersistentVolumeClaim is allowed. |
-| `kind` | query | string | Yes | Kubernetes kind. Currently only PersistentVolumeClaim with apiVersion v1 is allowed. |
+| `apiVersion` | query | string | Yes | Kubernetes API version. Must match an explicitly allowed storage resource kind. |
+| `kind` | query | string | Yes | Kubernetes kind. Allowed kinds are PersistentVolumeClaim, StorageClass and HostPathDefinition with their corresponding API versions. |
 | `namespace` | query | string | No | Required for namespaced kinds; must be omitted for cluster-scoped kinds. |
 
 ## Responses

@@ -33,5 +33,6 @@
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `taskId` | string | No | the task id |
+| `taskId` | string | No | Cloud TaskFlow task ID; query using the unified task API |
+| `workflowEngine` | string | No | Always taskflow for new import tasks |
 

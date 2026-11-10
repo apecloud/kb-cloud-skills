@@ -1,6 +1,6 @@
 # Redis Schemas
 
-40 schemas in this group.
+42 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
@@ -44,3 +44,5 @@
 | [RedisInfoResponse](RedisInfoResponse.md) | object |  |
 | [RedisClusterSlot](RedisClusterSlot.md) | object |  |
 | [RedisClusterTopology](RedisClusterTopology.md) | object |  |
+| [RedisKeyEntry](RedisKeyEntry.md) | object |  |
+| [RedisKeyAnalysisReport](RedisKeyAnalysisReport.md) | object | One Redis keys analysis report row. Rows are persi |

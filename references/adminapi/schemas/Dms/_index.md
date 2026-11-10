@@ -1,6 +1,6 @@
 # Dms Schemas
 
-59 schemas in this group.
+57 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
@@ -14,8 +14,6 @@
 | [DmsExportRequest](DmsExportRequest.md) | allOf |  |
 | [DmsImportRequest](DmsImportRequest.md) | object | the data of the import task |
 | [DmsImportFormData](DmsImportFormData.md) | object | the data of the import task |
-| [DmsTaskInfo](DmsTaskInfo.md) | object |  |
-| [DmsTaskList](DmsTaskList.md) | object |  |
 | [DmsSchemaList](DmsSchemaList.md) | array |  |
 | [DmsObject](DmsObject.md) | object |  |
 | [DmsObjectList](DmsObjectList.md) | array |  |

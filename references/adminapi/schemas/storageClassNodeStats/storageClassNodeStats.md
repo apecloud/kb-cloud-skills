@@ -8,6 +8,7 @@ storageClassNodeStats is a storage class node stats.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `apelocal` | [apelocalNodeStats](apelocalNodeStats.md) | No |  |
 | `nodeName` | string | Yes | the name of the node |
 | `nodeStatus` | string | Yes | the status of the node |
 | `requests` | number (double) | Yes | the total requests size of all PVCs on the node |

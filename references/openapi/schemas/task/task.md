@@ -21,6 +21,7 @@
 | `steps` | taskStep[] | No |  |
 | `parallelism` | integer | No | Degree of parallelism for the task |
 | `failurePolicy` | [taskFailurePolicy](taskFailurePolicy.md) | No |  |
+| `retryModes` | taskRetryMode[] | No | Supported manual retry modes for this task. Runtime conflicts are checked when retrying. |
 | `retryLimit` | integer | No | Maximum number of retries for the task |
 | `timeoutSecond` | integer | No | Timeout duration for the task in seconds |
 | `operator` | string | No | The user created the task |

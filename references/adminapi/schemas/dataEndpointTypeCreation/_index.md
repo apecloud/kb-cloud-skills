@@ -1,0 +1,7 @@
+# dataEndpointTypeCreation Schemas
+
+1 schemas in this group.
+
+| Schema | Type | Description |
+|--------|------|-------------|
+| [dataEndpointTypeCreation](dataEndpointTypeCreation.md) | enum |  |

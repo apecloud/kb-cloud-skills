@@ -8,4 +8,5 @@ VIP Pool APIs
 |--------|------|---------|----------|
 | GET | `/admin/v1/environments/{environmentName}/loadbalancer/vipPool` | List environment VIP Pools | [View](../operations/listVIPPool.md) |
 | POST | `/admin/v1/environments/{environmentName}/loadbalancer/vipPool` | Create environment VIP Pool | [View](../operations/createVIPPool.md) |
+| PUT | `/admin/v1/environments/{environmentName}/loadbalancer/vipPool/{poolID}` | Update environment VIP Pool | [View](../operations/updateVIPPool.md) |
 | DELETE | `/admin/v1/environments/{environmentName}/loadbalancer/vipPool/{poolID}` | Delete environment VIP Pool | [View](../operations/deleteVIPPool.md) |

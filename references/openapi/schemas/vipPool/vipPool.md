@@ -10,6 +10,8 @@ VIP Pool
 |-------|------|----------|-------------|
 | `addresses` | string | Yes | IP Addresses |
 | `id` | string | No | ID of VIP Pool |
+| `name` | string | No | Name of VIP Pool. It is the MetalLB IPAddressPool resource name, generated as kb-<id>. |
+| `poolName` | string | No | User facing name of the VIP Pool, used to select the pool when creating a cluster. It falls back to the IPAddressPool resource name. |
 | `total` | integer (int64) | Yes | Total number of IP addresses |
 | `used` | integer (int64) | Yes | Used number of IP addresses |
 | `usedIPs` | string[] | No | Used IP addresses |

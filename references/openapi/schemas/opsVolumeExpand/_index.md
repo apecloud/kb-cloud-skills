@@ -4,4 +4,4 @@
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [opsVolumeExpand](opsVolumeExpand.md) | object | OpsVolumeExpand is the payload to expand volume fo |
+| [opsVolumeExpand](opsVolumeExpand.md) | object | Expand component volumes and explicit targets for  |
