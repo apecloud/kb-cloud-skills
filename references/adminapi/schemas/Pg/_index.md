@@ -1,6 +1,6 @@
 # Pg Schemas
 
-4 schemas in this group.
+6 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
@@ -8,3 +8,5 @@
 | [PgExtension](PgExtension.md) | object |  |
 | [PgExtensionList](PgExtensionList.md) | array |  |
 | [PgCreateExtensionOpt](PgCreateExtensionOpt.md) | object |  |
+| [PgCreateExtensionStatus](PgCreateExtensionStatus.md) | enum |  |
+| [PgCreateExtensionResult](PgCreateExtensionResult.md) | object |  |

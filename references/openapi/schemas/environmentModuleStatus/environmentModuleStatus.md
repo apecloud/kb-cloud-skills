@@ -17,4 +17,6 @@ Status of an environment module. Enabled is only used as the desired state when 
 - `Upgradeable`
 - `Upgrading`
 - `UpgradeFailed`
+- `Uninstalling`
+- `UninstallationFailed`
 - `Unknown`

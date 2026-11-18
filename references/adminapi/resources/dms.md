@@ -4,6 +4,7 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/dms/audits` | List independent DMS audit records | [View](../operations/listDMSAudit.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}` | get the datasource | [View](../operations/getDataSourceV2.md) |
 | DELETE | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}` | delete the datasource | [View](../operations/deleteDataSourceV2.md) |
 | GET | `/admin/v1/organizations/{orgName}/clusters/{clusterName}/datasource` | list the datasource of a cluster | [View](../operations/listDataSourceV2.md) |

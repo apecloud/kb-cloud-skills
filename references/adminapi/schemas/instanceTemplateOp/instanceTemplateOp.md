@@ -9,3 +9,4 @@ Operation that can be declared on instanceTemplate.ops.
 - `hscale`
 - `vscale`
 - `storageExpansion`
+- `upgrade`

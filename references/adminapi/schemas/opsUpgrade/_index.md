@@ -4,4 +4,4 @@
 
 | Schema | Type | Description |
 |--------|------|-------------|
-| [opsUpgrade](opsUpgrade.md) | object | OpsUpgrade is the payload to upgrade a KubeBlocks  |
+| [opsUpgrade](opsUpgrade.md) | object | Upgrade a component or selected instance templates |

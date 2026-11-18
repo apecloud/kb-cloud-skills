@@ -21,7 +21,9 @@ backupRepo is the payload for KubeBlocks cluster backup repo
 | `storageName` | string | No | the name of storage used by backup repo |
 | `storageID` | string | No | the id of storage used by backup repo |
 | `storageProvider` | string | Yes | storageProvider specifies the storage provider of the backupRepo |
+| `storageProviderDisplayName` | [storageDisplayName](storageDisplayName.md) | No |  |
 | `totalSize` | string | No | totalSize specifies the total size of backups in the backupRepo |
+| `check` | [backupRepoCheckResult](backupRepoCheckResult.md) | No |  |
 | `failedReason` | string | No | failedReason specifies the reason of the backupRepo failure |
 | `failedMessage` | string | No | failedMessage specifies the message of the backupRepo failure |
 

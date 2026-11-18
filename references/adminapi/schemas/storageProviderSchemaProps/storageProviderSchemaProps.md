@@ -8,7 +8,7 @@ the schema properties for storage provider parameters
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `default` | object | No | default value for the parameter |
+| `default` | any | No | default value for the parameter; its JSON type follows the parameter type |
 | `description` | [localizedDescription](localizedDescription.md) | No |  |
 | `title` | [localizedDescription](localizedDescription.md) | No |  |
 | `type` | string | No | type of the parameter |

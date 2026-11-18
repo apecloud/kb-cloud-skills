@@ -8,6 +8,7 @@ License info
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `taskId` | string | No | Asynchronous addon license synchronization task created after the platform license is saved. Only returned by the update operation. |
 | `clusterID` | string | Yes | The kubernetes cluster ID |
 | `email` | string | Yes | The licensed user email |
 | `userName` | string | Yes | The licensed user or organization name |

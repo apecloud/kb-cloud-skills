@@ -4,7 +4,7 @@
 **Update an environment module**
 **Operation ID:** `updateEnvironmentModule`
 
-Performs the requested module action. Supported quick install and upgrade actions use dryRun=true for synchronous checks without changes; dryRun=false or omitted repeats the checks and submits an asynchronous task only when all checks pass. Other module actions keep their original behavior.
+Performs the requested module action. Supported install, upgrade, and uninstall actions use dryRun=true for synchronous checks without changes; dryRun=false or omitted repeats the checks and submits an asynchronous task only when all checks pass. Failed uninstall tasks reuse their original resource snapshot on retry. Other module actions keep their original behavior.
 
 ## Parameters
 

@@ -51,6 +51,7 @@ Environment APIs
 | GET | `/admin/v1/environments/{environmentName}/availableZones` | List the availability zones where the environment's nodes are located | [View](../operations/listEnvNodeZone.md) |
 | GET | `/admin/v1/environments/{environmentName}/network/ipPools` | Discover Pod IP pools and explicit selection policy in an environment | [View](../operations/listEnvironmentIPPools.md) |
 | POST | `/admin/v1/environmentObjectStorage` | List environment object storage | [View](../operations/listEnvironmentObjectStorage.md) |
+| POST | `/admin/v1/environmentStaticClusters` | List reusable environment service clusters | [View](../operations/listEnvironmentStaticClusters.md) |
 | POST | `/admin/v1/environmentBackupRepo` | get environment backup repo | [View](../operations/getEnvironmentBackupRepo.md) |
 | POST | `/admin/v1/checkKubeconfig` | check kubeconfig | [View](../operations/checkKubeconfig.md) |
 | GET | `/admin/v1/environments/{environmentName}/modules` | Get environment module information in an environment | [View](../operations/getEnvironmentModuleInfo.md) |

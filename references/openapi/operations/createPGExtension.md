@@ -1,8 +1,10 @@
 # POST /api/v1/data/postgresql/organizations/{orgName}/clusters/{clusterName}/extensions
 
 **Resource:** [postgresql](../resources/postgresql.md)
-**create PostgreSQL extension**
+**Enable PostgreSQL extensions in selected databases**
 **Operation ID:** `createPGExtension`
+
+Enable one or more PostgreSQL extensions across selected databases, returning a result for each database-extension pair.
 
 ## Parameters
 

@@ -9,6 +9,7 @@
 | Name | In | Type | Required | Description |
 |------|------|------|----------|-------------|
 | `environmentName` | path | string | Yes | name of the environment |
+| `envInstall` | query | boolean | No | Use the environment installation repository selection and retry handling. Omitted or false performs ordinary repository creation. |
 
 ## Request Body
 
@@ -24,6 +25,7 @@
 |--------|-------------|
 | 200 | A successful response. |
 | 201 | Returned when edge is created successfully. |
+| 400 | (reference) |
 | 401 | (reference) |
 | 403 | (reference) |
 

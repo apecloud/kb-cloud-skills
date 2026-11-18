@@ -6,6 +6,7 @@ Data Management System APIs
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
+| GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/dms/audits` | List independent DMS audit records | [View](../operations/listDMSAudit.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}` | get the datasource | [View](../operations/getDataSourceV2.md) |
 | DELETE | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}` | delete the datasource | [View](../operations/deleteDataSourceV2.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource` | list the datasource of a cluster | [View](../operations/listDataSourceV2.md) |

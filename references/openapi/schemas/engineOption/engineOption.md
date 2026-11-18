@@ -31,6 +31,7 @@ The value should match one of the mode names defined in the modes array.
 | `restart` | componentOpsOption[] | Yes |  |
 | `hscale` | componentOpsOption[] | Yes |  |
 | `vscale` | componentOpsOption[] | Yes |  |
+| `needAddonlicense` | boolean | No | Whether the cluster chart consumes the platform license through the standard addon-license.existingSecret name/key values. |
 | `license` | object | No |  |
 | `storageExpansion` | componentOpsOption[] | No |  |
 | `rebuildInstance` | componentOpsOption[] | No |  |

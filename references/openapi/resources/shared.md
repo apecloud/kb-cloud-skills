@@ -191,6 +191,7 @@
 | GET | `/api/v1/engineTypes` | List engine types | [View](../operations/listEngineTypes.md) |
 | GET | `/api/v1/environments/{environmentName}/engines` | List engines in environment | [View](../operations/listEnginesInEnv.md) |
 | GET | `/api/v1/taskTypes` | List task types | [View](../operations/listTaskTypes.md) |
+| GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/dms/audits` | List independent DMS audit records | [View](../operations/listDMSAudit.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}` | get the datasource | [View](../operations/getDataSourceV2.md) |
 | DELETE | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource/{id}` | delete the datasource | [View](../operations/deleteDataSourceV2.md) |
 | GET | `/api/v1/organizations/{orgName}/clusters/{clusterName}/datasource` | list the datasource of a cluster | [View](../operations/listDataSourceV2.md) |

@@ -6,6 +6,7 @@
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `instanceTemplates` | instanceTemplateServiceVersions[] | No |  |
 | `component` | string | No | component type, refer to componentDef and support NamePrefix |
 | `upgradeableVersions` | string[] | No |  |
 | `currentVersion` | string | No |  |

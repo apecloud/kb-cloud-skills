@@ -20,4 +20,6 @@ Single environment module information
 | `optional` | boolean | No | indicate module is optional. If false, the module is required and must be installed |
 | `defaultEnabled` | boolean | No | indicate whether module is enabled by default when creating environment. Only effective when optional is true |
 | `actionWarning` | [localizedDescription](localizedDescription.md) | No |  |
+| `uninstallSupported` | boolean | No | Whether the module supports the Uninstall action. A dry run checks whether it is currently safe to uninstall. |
+| `uninstallWarning` | [localizedDescription](localizedDescription.md) | No |  |
 

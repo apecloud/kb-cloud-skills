@@ -11,4 +11,5 @@ API error response.
 | `code` | integer | Yes | The HTTP status code. |
 | `reason` | string | No | The reason for the error. |
 | `message` | string | No | The message for the error. |
+| `errorCode` | string | No | Stable business error code for programmatic handling. |
 
